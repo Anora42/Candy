@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar Precio de Productos</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cancelarEdicion()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Nombre</ion-label>
+    <ion-input type="text" [(ngModel)]="producto.nombre" readonly></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Categoría</ion-label>
+    <ion-select [(ngModel)]="nuevaCategoria">
+      <ion-select-option value="gomitas">Gomitas</ion-select-option>
+      <ion-select-option value="chocolates">Chocolates</ion-select-option>
+      <ion-select-option value="paletas">Paletas</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Precio</ion-label>
+    <ion-input type="number" [(ngModel)]="nuevoPrecio"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Precio por Mayoreo</ion-label>
+    <ion-input type="number" [(ngModel)]="nuevoPrecioPorMayor"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Descripción</ion-label>
+    <ion-input type="text" [(ngModel)]="nuevaDescripcion"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Imagen</ion-label>
+    <ion-input type="text" [(ngModel)]="nuevaImagen"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Productos existentes</ion-label>
+      <ion-input type="number" [(ngModel)]="nuevaCantidad"></ion-input>
+   </ion-item> 
+
+  <ion-row>
+    <ion-col>
+      <ion-button expand="full" color="primary" (click)="guardarCambios()">Guardar Cambios</ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button expand="full" color="medium" (click)="cancelarEdicion()">Cancelar</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

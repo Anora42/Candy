@@ -1,0 +1,65 @@
+<ion-content class="ion-padding">
+
+  <img class="Milk1"src="https://mateogutierrez.neocities.org/milki.png">
+  <img class="Milk3" src="https://mateogutierrez.neocities.org/milk22.png">
+  <img class="Milk2" src="https://mateogutierrez.neocities.org/milk22.png">
+  <img class="Pulparindos" src="https://mateogutierrez.neocities.org/MasPulparindos.png">
+  <img class="Pulparindo" src="https://mateogutierrez.neocities.org/pulparindoCaja.png">
+  <img class="Gomitas" src="https://mateogutierrez.neocities.org/Gomitas.png">
+  <img class="Gomitas2" src="https://mateogutierrez.neocities.org/masGomitas.png">
+  <img class="Skis" src="https://mateogutierrez.neocities.org/skisJ.png">
+  <div class="container">
+
+
+    <h1 ><strong>RÉGISTRATE</strong></h1>
+
+    <ion-list>
+      <ion-item lines="full">
+        <ion-label position="stacked">Nombre</ion-label>
+        <ion-input type="text" [(ngModel)]="nombre"></ion-input>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="stacked">Apellido</ion-label>
+        <ion-input type="text" [(ngModel)]="apellido"></ion-input>
+      </ion-item>
+      
+
+      <ion-item lines="full">
+        <ion-label position="stacked">Teléfono</ion-label>
+        <ion-input type="tel" [(ngModel)]="telefono"></ion-input>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="stacked">Correo electrónico</ion-label>
+        <ion-input type="email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="stacked">Contraseña</ion-label>
+        <!-- Utilice un tipo dinámico para el campo de entrada -->
+        <ion-input [type]="showPassword ? 'text' : 'password'" [(ngModel)]="contrasena"></ion-input>
+        <!-- Agregar icono de ojo para alternar la visibilidad de la contraseña -->
+        <ion-icon class="ojo" slot="end" [name]="showPassword ? 'eye-off' : 'eye'" (click)="togglePassword()"></ion-icon>
+      </ion-item>
+    </ion-list>
+    <div id="recaptcha-container"></div>
+
+    <div class="ion-padding">
+      <ion-button class="EnviarCodigo" (click)="enviarCodigoVerificacion()">Enviar Código de Verificación</ion-button>
+    </div>
+
+    <div class="ion-padding">
+      <ion-item lines="full">
+        <ion-label position="stacked">Código de Verificación</ion-label>
+        <ion-input type="text" [(ngModel)]="codigoVerificacion"></ion-input>
+      </ion-item>
+    </div>
+
+    <div class="ion-padding">
+      <ion-button class="Guardar" (click)="guardar()">Guardar</ion-button>
+    </div>
+  </div>
+
+  <h2 class="Inicio">¿Ya eres miembro? <a (click)="irALogin()"><strong class="sesion" color="secondary">Inicia sesión</strong></a></h2>
+</ion-content>

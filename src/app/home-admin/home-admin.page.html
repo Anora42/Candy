@@ -1,0 +1,231 @@
+<ion-content>
+  <ion-header class="header1">
+    <ion-toolbar class="header1" color="pink"></ion-toolbar>
+    <ion-toolbar>
+      <ion-img class="Logo" src="https://mateogutierrez.neocities.org/Logo-con-palito2.png" alt="Logo"></ion-img>
+      <ion-buttons slot="end">
+        <div class="custom-searchbar">
+          <input type="text" placeholder="Hola, ¿Qué estás buscando?" class="search-input" [(ngModel)]="searchQuery" (input)="buscar()">
+          <button class="search-icon" (click)="buscar()">
+            <ion-icon name="search"></ion-icon>
+          </button>
+        </div>                  
+        <ion-button routerLink="/perfil-admin">
+          <ion-icon name="person"></ion-icon>
+        </ion-button>
+        <ion-button routerLink="/carrito">
+          <ion-icon name="cart"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+    <ion-toolbar>
+      <div class="BotonesH">
+        <ion-buttons class="menu" slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <h2 class="separacion" style="cursor: pointer;">Inicio</h2>
+        <h2 class="separacion" style="cursor: pointer;">
+          <ion-select [(ngModel)]="categoriaSeleccionada">
+            <ion-select-option value="categorias">Categorías</ion-select-option>
+            <ion-select-option value="gomitas">Gomitas</ion-select-option>
+            <ion-select-option value="chocolates">Chocolates</ion-select-option>
+            <ion-select-option value="paletas">Paletas</ion-select-option>
+          </ion-select>
+        </h2>
+        
+        <button class="separacion" *ngIf="categoriaSeleccionada !== 'categorias'" (click)="abrirModal()" class="increment-button">Incrementa tus precios</button>
+        <h2 class="separacion" style="cursor: pointer;"  (click)="irAPedidos()">
+          Pedidos
+          <span class="badge" *ngIf="newPedidoCount > 0">{{ newPedidoCount }}</span>
+        </h2>
+
+
+      </div>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-menu side="start" contentId="main-content">
+    <ion-header>
+      <ion-toolbar class="header1" color="pink">
+        <ion-title>Reporte</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <ion-item>
+          <ion-label routerLink="/reportedia" style="cursor: pointer;">Día</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label routerLink="/reportesemana" style="cursor: pointer;">Semana</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label routerLink="/reportemes" style="cursor: pointer;">Mes</ion-label>
+        </ion-item>        
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button name="add" (click)="openModal()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-grid class="product-grid">
+    <ion-row class="product-row">
+      <ng-container *ngFor="let producto of productos$ | async">
+        <ion-col size="12" size-sm="6" size-md="3" size-lg="2" *ngIf="producto.categoria === categoriaSeleccionada || categoriaSeleccionada === 'categorias'">
+          <ion-card class="small-card">
+          <div class="image-container">
+            <img
+              class="tamañoimg imagen-centrada"
+              [src]="producto.imagen"
+              alt="Imagen del producto"
+              (error)="imagenNoDisponible($event)"
+            />
+          </div>
+          <ion-card-content>
+            <ion-card-title>{{ producto.nombre }}</ion-card-title>
+            <ion-card-subtitle
+              >{{ producto.precio | currency }}</ion-card-subtitle
+            >
+          </ion-card-content>
+          <ion-row >
+
+
+
+            <ion-col size="6">
+              <ion-button
+                class="Detalle"
+                (click)="mostrarDetalle(producto)"
+                expand="full"
+              >
+                Ver detalle
+              </ion-button>
+            </ion-col>
+
+
+
+            <ion-col size="6">
+              <ion-button  class="Detalle" expand="full" (click)="editarProducto(producto)">
+                <ion-icon name="create"></ion-icon>
+                Editar
+              </ion-button>
+            </ion-col>
+
+      
+            <ion-col size="6">
+              <ion-icon
+                class="Eliminar"
+                name="trash-outline"
+                expand="full"
+                (click)="eliminarProducto(producto.nombre)"
+              >
+              </ion-icon>
+              Eliminar
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+    </ng-container>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="product-grid">
+    <ion-row class="product-row">
+      <ng-container *ngIf="searchQuery !== ''">
+        <ion-col size="12" size-sm="6" size-md="10" size-lg="8" *ngFor="let usuario of usuarios$ | async">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>{{ usuario.nombre }}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-item>
+                <ion-label>Nombre:</ion-label>
+                <ion-label>{{ usuario.nombre }}</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Apellido:</ion-label>
+                <ion-label>{{ usuario.apellido }}</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Correo:</ion-label>
+                <ion-label>{{ usuario.correo }}</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Teléfono:</ion-label>
+                <ion-label>{{ usuario.telefono }}</ion-label>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ng-container>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="product-grid">
+    <ion-row class="product-row">
+      <ng-container *ngFor="let producto of productosOfertas$ | async">
+        <ion-col >
+          <ion-card class="small-card">
+            <ion-icon name="pricetag" class="oferta-icon" color="danger" *ngIf="producto.categoria === 'ofertas'"></ion-icon>
+            <div class="image-container">
+              <img
+                class="tamañoimg imagen-centrada"
+                [src]="producto.imagen"
+                alt="Imagen del producto"
+                (error)="imagenNoDisponible($event)"
+              />
+            </div>
+            <ion-card-content>
+              <ion-card-title class="nombre-producto">{{ producto.nombre }}</ion-card-title>
+              <ion-card-subtitle class="precio">{{ producto.precio | currency }}</ion-card-subtitle>
+
+
+              <ion-label class="oferta-label" color="danger" *ngIf="producto.categoria === 'ofertas'"><strong>Oferta</strong></ion-label>
+            </ion-card-content>
+            <ion-row >
+              <ion-col size="6">
+                <ion-button name="menu-outline" class="Detalle" (click)="mostrarDetalle(producto)" expand="full">Ver detalle</ion-button>
+              </ion-col>
+              <ion-col size="6">
+                <ion-button expand="full" class="Detalle" (click)="editarProducto(producto)">
+                  <ion-icon name="create"></ion-icon>
+                  Editar
+                </ion-button>
+              </ion-col>
+              <ion-col size="6">
+                <ion-icon
+                  class="Eliminar"
+                  name="trash-outline"
+                  expand="full"
+                  (click)="eliminarProductoOferta(producto.nombre)"
+                >
+                </ion-icon>
+                Eliminar
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-col>
+      </ng-container>
+    </ion-row>
+  </ion-grid>
+
+  <div class="footer-content">
+    <div class="footer-left">
+      <img
+        src="https://mateogutierrez.neocities.org/Logo-removebg-preview.png"
+        alt="Logo"
+        class="footer-logo"
+      />
+    </div>
+    <div class="footer-right">
+      <div class="contact-text">Contáctanos</div>
+      <ion-icon name="logo-facebook" class="social-icon"></ion-icon>
+      <ion-icon name="logo-twitter" class="social-icon"></ion-icon>
+      <ion-icon name="logo-instagram" class="social-icon"></ion-icon>
+    </div>
+  </div>
+</ion-content>

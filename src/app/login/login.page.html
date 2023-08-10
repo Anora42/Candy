@@ -1,0 +1,39 @@
+<ion-content class="ion-padding">
+
+  <img class="Milk1"src="https://mateogutierrez.neocities.org/milki.png">
+  <img class="Milk3" src="https://mateogutierrez.neocities.org/milk22.png">
+  <img class="Milk2" src="https://mateogutierrez.neocities.org/milk22.png">
+  <img class="Pulparindos" src="https://mateogutierrez.neocities.org/MasPulparindos.png">
+  <img class="Pulparindo" src="https://mateogutierrez.neocities.org/pulparindoCaja.png">
+  <img class="Gomitas" src="https://mateogutierrez.neocities.org/Gomitas.png">
+  <img class="Gomitas2" src="https://mateogutierrez.neocities.org/masGomitas.png">
+  <img class="Skis" src="https://mateogutierrez.neocities.org/skisJ.png">
+
+
+  <ion-card>
+    <div class="container">
+      <h1 color="secondary">Iniciar sesión<a (click)="irALoginAdmin()"><strong color="secondary" class="admin">/Admin</strong></a></h1>
+
+      <ion-list>
+        <ion-item lines="full">
+          <ion-label position="stacked">Correo Electronico</ion-label>
+          <ion-input type="email" [(ngModel)]="correo"></ion-input>
+        </ion-item>
+
+        <ion-item lines="full">
+          <ion-label position="stacked">Contraseña</ion-label>
+          <ion-input [type]="showPassword ? 'text' : 'password'" [(ngModel)]="contrasena"></ion-input>
+          <ion-icon class="ojo" slot="end" [name]="showPassword ? 'eye-off' : 'eye'" (click)="togglePassword()"></ion-icon>
+        </ion-item>
+      </ion-list>
+
+      <div class="ion-padding">
+        <ion-button color="primary" class="Guardar" (click)="Login()">Iniciar sesión</ion-button>
+        <br>
+        <ion-button color="secondary" class="Volver"(click)="Volver()">Volver</ion-button>
+      </div>
+    </div>
+    <button (click)="Recuperar()"><h2 color="tertiary">Olvidaste tu contraseña?</h2></button>
+  </ion-card>
+
+</ion-content>

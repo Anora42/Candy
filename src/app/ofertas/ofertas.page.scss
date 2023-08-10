@@ -1,0 +1,561 @@
+@media screen and (min-width: 600px){
+    .Logo{
+      width: 150px;
+    
+      }
+      
+      .header1{
+      background-color: #FE0000;
+      }
+      
+      .contenedor{
+        background-color: antiquewhite;
+      }
+      
+      .BotonesH{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 0px;
+        margin: 0%;
+        color:black;
+      }
+      .Home{
+        justify-content: center;
+        align-items: center;
+        color:black;
+      }
+      .separacion {
+        margin-right: 300px; 
+      }
+    
+      .mini-icon{
+        color: #FE0000;
+      }
+      .custom-searchbar {
+        
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        width: 500px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        border-radius: 20px;
+        padding: 5px;
+        box-shadow: 0px 0px 5px #FE0000;
+       
+    
+      }
+      
+      .search-input {
+        flex-grow: 1;
+        border: none;
+        border-radius: 20px;
+        padding: 10px;
+        font-size: 16px;
+        color: #999999;
+      }
+      
+      .search-icon {
+        background-color: #FE0000;
+        
+        border: none;
+        border-radius: 20px;
+        padding: 10px;
+        margin-left: 5px;
+        cursor: pointer;
+      }
+      
+      .search-icon ion-icon {
+        color:#ffffff;
+    }
+   
+    
+    
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 16px;
+      background-color: #001C30;
+      margin-top: 500px;
+    }
+    
+    .footer-left {
+      display: flex;
+      align-items: center;
+    }
+    
+     
+    .footer-logo {
+      width: 150px;
+      height: 150px;
+    }
+    
+    .footer-right {
+      display: flex;
+      align-items: center;
+    }
+    
+    .social-icon {
+      font-size: 24px;
+      margin-left: 8px;
+      color: white;
+      width: 50px;
+      height: 40px;
+    }
+    
+    .contact-text {
+      color: white;
+      margin-right: 8px;
+      font-size:20px;
+    }
+    
+    
+    .small-card {
+      width: 200px; /* Ajusta el valor según tus necesidades */
+      height: 250px;
+    }
+    
+    .small-card img {
+      max-width: 80%;
+      max-height: 100px; 
+      display:flex;
+      justify-content: center;
+      align-items:center;
+      image-orientation: center;
+    }
+    
+    .tamañoimg {
+      width: 100px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .imagen-centrada {
+      display: block;
+      margin: 0 auto;
+    }
+    
+    .Carrito {
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      height: 30px;
+      color:#45CFDD;
+    
+    }
+      
+    }
+    
+    .Detalle{
+      font-size:7px;
+      justify-content: center;
+      align-items:center;
+      width: 100px;
+      height: 30px;
+      color:#45CFDD;
+    
+    }
+    .small-card {
+      margin-bottom: 100px;
+      margin-right: 5px;
+      margin-left: 5px;
+      border-radius: 10%;
+    }
+    .oferta-icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 8px;
+      font-size: 24px;
+    }
+    .oferta-label{
+      position: absolute;
+      top: -140%;
+      left: 0;
+      margin: 8px;
+      font-size: 16px;
+    }
+    
+    .Letras{
+      font-size:10px;
+      justify-content: center;
+      align-items:center;
+    }
+    .editar-fab {
+      --ion-color-primary: #45CFDD;
+      height: 34px;
+      width: 40px;
+    left:90%;
+    }
+    .contador {
+      position: absolute;
+      top: -1px;
+      right: -10px;
+      background-color: #FE0000;
+      color: white;
+      font-size: 12px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+    }
+    
+    
+    
+    
+    
+    @media screen and (max-width: 480px) {
+      .Logo {
+        width: 60px;
+      }
+    
+    
+    .header1 {
+      background-color: #FF82FA;
+    }
+    
+    .contenedor {
+      background-color: antiquewhite;
+    }
+    
+    .BotonesH {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 10%;
+      margin: 0%;
+    }
+    
+    
+    
+    .separacion {
+      margin-right: 30px;
+    }
+    
+    .BotonesH h2 {
+      font-size: 16px;
+    }
+    
+    
+    
+      
+  .Letras {
+    font-size: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+    .custom-searchbar {
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      width: 200px;
+      height:30px;
+      background-color: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0px 0px 5px #ff00ff;
+    }
+    
+    .search-input {
+      width: 170px;
+      height:30px;
+      border: none;
+      border-radius: 20px;
+      padding: 10px;
+      font-size: 16px;
+      color: #999999;
+    }
+    
+    .search-icon {
+      background-color: #ff00ff;
+      border: none;
+      border-radius: 50px;
+      padding: 7px;
+      cursor: pointer;
+    }
+    
+    .search-icon ion-icon {
+      color: #ffffff;
+    }
+    
+   
+    
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 8px;
+      background-color: #40231b;
+      margin-top: 200px;
+    }
+    
+    .footer-left {
+      display: flex;
+      align-items: center;
+    }
+    
+    .footer-logo {
+      width: 50px;
+      height: 50px;
+    }
+    
+    .footer-right {
+      display: flex;
+      align-items: center;
+    }
+    
+    .social-icon {
+      font-size: 24px;
+      margin-left: 8px;
+      color: white;
+      width: 20px;
+      height: 40px;
+    }
+    
+    .contact-text {
+      color: white;
+      margin-right: 8px;
+      font-size: 20px;
+    }
+    .prueba{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+     }
+    .small-card {
+      
+      width: 100px; /* Ajusta el valor según tus necesidades */
+      height: 140px;
+    }
+    
+    .small-card img {
+      margin: 0px;
+      max-width: 80px;
+      max-height: 80px; /* Ajusta el valor según tus necesidades */
+    }
+   
+    
+    .Carrito {
+      font-size: 7px;
+      justify-content: center;
+      align-items: center;
+      margin-top: -10px;
+      border-radius: 20px;
+      width: 20px;
+      height:15px;
+    }
+    
+
+    .Detalle{
+      top: -5px;
+      font-size:10px;
+      position: relative;
+      justify-content: center;
+      align-items:center;
+      width: 50px;
+      height: 20px;
+      color:#45CFDD;
+    
+    }
+    .nombre-producto {
+      margin-top: -10px;
+      font-size: 7px;
+    }
+    .precio{
+      font-size: 9px;
+      margin: 2px;
+    }
+    
+    
+    .small-card {
+      
+      margin-bottom:40px;
+      margin-right: 5px;
+      margin-left: 5px;
+      border-radius: 10%;
+    }
+    
+    .Letras {
+      font-size: 10px;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .tamañoimg imagen-centrada {
+      display: block;
+      margin: 0 auto;
+    }
+    .tamañoimg {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .contador {
+      position: absolute;
+      top: -1px;
+      right: -10px;
+      background-color: red;
+      color: white;
+      font-size: 6px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+     z-index:1;
+    }
+    .contenedor {
+      background-color: antiquewhite;
+    }
+    
+    .BotonesH {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 10%;
+      margin: 0%;
+    }
+    
+    
+    
+    .separacion {
+      margin-right: 30px;
+    }
+    
+    .BotonesH h2 {
+      font-size: 16px;
+    }
+    
+    
+    
+    
+    .custom-searchbar {
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      width: 200px;
+      height:30px;
+      background-color: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0px 0px 5px #FE0000;
+    }
+    
+    .search-input {
+      width: 170px;
+      height:30px;
+      border: none;
+      border-radius: 20px;
+      padding: 10px;
+      font-size: 16px;
+      color: #999999;
+    }
+    
+    .search-icon {
+      background-color: #FE0000;
+      border: none;
+      border-radius: 50px;
+      padding: 7px;
+      cursor: pointer;
+    }
+    
+    .search-icon ion-icon {
+      color: #ffffff;
+    }
+    
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fff;
+    }
+    
+    .swiper-slide img {
+      width: auto;
+      height: auto;
+    }
+    
+    .swiper-button-prev,
+    .swiper-button-next {
+      position: absolute;
+      top: 78%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      background-color: #45CFDD;
+      border-radius: 50%;
+      border: 1px solid #45CFDD;
+      color: #fff;
+      font-size: 16px;
+      line-height: 40px;
+      text-align: center;
+      cursor: pointer;
+      z-index: 10;
+    }
+    
+    .swiper-button-prev {
+      left: 5px;
+    }
+    
+    .swiper-button-next {
+      right: 5px;
+    }
+    
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 8px;
+      background-color: #001C30;
+      margin-top: 200px;
+      position: relative;
+      top: 10%;
+    }
+    
+    .footer-left {
+      display: flex;
+      align-items: center;
+    }
+    
+
+    
+ 
+
+    
+   
+
+
+
+    
+ 
+      
+    
+
+    
+    
+    
+
+
+    
+    
+
+  }
+
+  

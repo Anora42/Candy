@@ -1,0 +1,75 @@
+<ion-content>
+
+  <ion-header class="header1">
+    <ion-toolbar class="header1" color="pink"></ion-toolbar>
+    <ion-toolbar>
+      <ion-img class="Logo" src="https://mateogutierrez.neocities.org/Logo-con-palito2.png" alt="Logo"></ion-img>
+      <ion-buttons slot="end">
+        <div class="custom-searchbar">
+          <input type="text" placeholder="Hola, ¿Qué estás buscando?" class="search-input">
+          <button class="search-icon">
+            <ion-icon name="search"></ion-icon>
+          </button>
+        </div>
+        <ion-button routerLink="/perfil">
+          <ion-icon name="person"></ion-icon>
+        </ion-button>
+        <ion-button routerLink="/carrito">
+          <ion-icon name="cart"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+    <ion-toolbar>
+      <div class="BotonesH">
+        <h2 class="separacion" style="cursor: pointer;" (click)="irAHomeAdmind()">Inicio</h2>
+               <h2 class="separacion" style="cursor: pointer;">
+          </h2>
+      </div>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-menu side="start" contentId="main-content"></ion-menu>
+    <ion-header>
+      <ion-toolbar class="header1" color="pink">
+        <ion-title class="pedi">   <strong>Pedidos</strong></ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+
+
+      <ion-list *ngIf="orders.length > 0" class="pedidos">
+        <ion-item *ngFor="let order of orders">
+          <ion-icon
+          class="Eliminar"
+          name="trash-outline"
+          expand="full"
+          (click)="eliminarPedido(order.pedidoId)"
+        ></ion-icon>
+          <ion-label>Usuario: {{ order.user }}</ion-label>
+    
+          <ion-label class="productos">Productos:</ion-label>
+          <ion-list>
+            <ion-item *ngFor="let producto of order.productos">
+              {{ producto.nombre }} (Cantidad: {{ producto.cantidad }})
+            </ion-item>
+          </ion-list>
+          <ion-list>
+            <ion-item *ngFor="let producto of order.productos">
+              {{ producto.nombre }} (Cantidad: {{ producto.cantidad }})
+              <ion-img
+                class="producto-imagen"
+                [src]="producto.imagen"
+                [alt]="producto.nombre"
+                [ngClass]="{ 'imagen-grande': order.selected }"
+                (click)="toggleOrderSelection(order)"
+              ></ion-img>
+            </ion-item>
+          </ion-list>
+          <ion-label class="total">Total Compra: {{ order.totalCompra }}</ion-label>
+    
+          <!-- Mostrar la fecha formateada -->
+          <ion-label class="Fecha">Fecha Recolección: {{ formatFechaRecoleccion(order.fechaRecoleccion) }}</ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-text *ngIf="orders.length === 0">No hay pedidos para mostrar.</ion-text>
+  </ion-content>

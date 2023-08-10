@@ -1,0 +1,15 @@
+<ion-content class="ion-padding">
+  <div class="welcome-modal-content">
+    <strong><p>No puede agregar productos al carrito</p></strong>
+    <p class="Inicio">Por favor iniciar sesión o registrarse</p>
+  </div>
+  <ion-img class="Logo" src="https://mateogutierrez.neocities.org/mascota3.png" alt="Logo"></ion-img>
+  <ion-row class="buttons-row">
+    <ion-col >
+      <ion-button class="Bordo" expand="full" (click)="cerrarModal()" class="modal-button"><strong>Cerrar</strong></ion-button>
+    </ion-col>
+    <ion-col >
+      <ion-button  class="Bordo"expand="full" (click)="irARegistro()"(click)="cerrarModal()" class="modal-button"><strong>Registrarse</strong></ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

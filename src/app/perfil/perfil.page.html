@@ -1,0 +1,66 @@
+<ion-content>
+
+  <ion-header class="header1">
+    <ion-toolbar class="header1" color="primary">
+      
+    </ion-toolbar>
+    <ion-toolbar>
+      <ion-img class="Logo" src="https://mateogutierrez.neocities.org/Logo-con-palito2.png" alt="Logo"></ion-img>
+     
+      <div class="BotonesH">
+        <h2 class="separacion" style="cursor: pointer;"><a  class="Home"(click)="irAHome()">Inicio</a></h2>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+      
+      <h3 class="separacion" style="cursor: pointer;"><strong color="secondary" >Perfil de usuario</strong></h3>
+    </div>
+    </ion-toolbar>
+  </ion-header>
+
+<div class="Ajuste">
+<div class="perfil">
+  <h1 class="nombre">Perfil</h1>
+  <div class="name"></div>
+
+  <div class="info">
+    <div class="foto">
+      <p>{{ getIniciales() }}</p>
+    </div>
+ 
+  </div>
+
+  <div class="datos">
+    <p class="dato1">Nombre</p>
+    <input class="input1" [(ngModel)]="nombre" [readonly]="!editando" (input)="detectarCambios()">
+    <p class="dato2">Apellido</p>
+    <input class="input2" [(ngModel)]="apellido" [readonly]="!editando" (input)="detectarCambios()">
+    <p class="dato3">Telefono</p>
+    <input class="input3" [(ngModel)]="telefono" [readonly]="!editando" (input)="detectarCambios()">
+    <p class="dato4">Correo</p>
+    <input class="input4" [(ngModel)]="correo" [readonly]="true">
+    <button *ngIf="!editando && !cambiosRealizados" (click)="habilitarEdicion()">Editar</button>
+    <button *ngIf="editando && cambiosRealizados" (click)="guardar()">Guardar</button>
+    <button *ngIf="editando && !cambiosRealizados" (click)="cancelarEdicion()">Cancelar</button>
+  </div>
+</div>
+</div>
+
+
+  <ion-button color="primary" class="exit"(click)="cerrarSesion()" expand="full">
+    <ion-icon slot="start" name="exit"></ion-icon>
+    Cerrar sesión
+  </ion-button>
+
+
+    <div class="footer-content">
+      <div class="footer-left">
+        <img src="https://mateogutierrez.neocities.org/Logo-removebg-preview.png" alt="Logo" class="footer-logo">
+      </div>
+      <div class="footer-right">
+        <div class="contact-text">Contáctanos</div>
+        <ion-icon name="logo-facebook" class="social-icon"></ion-icon>
+        <ion-icon name="logo-twitter" class="social-icon"></ion-icon>
+        <ion-icon name="logo-instagram" class="social-icon"></ion-icon>
+      </div>
+    </div>
+
+  </ion-content>
