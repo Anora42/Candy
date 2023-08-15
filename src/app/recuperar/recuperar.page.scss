@@ -1,0 +1,177 @@
+ion-header {
+    background-color: #f8f8f8;
+  }
+  
+  ion-content {
+    background-color: #f8f8f8;
+  }
+  
+  .card-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 50px;
+    max-height: 500px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+    margin-top: 200px;
+  }
+  
+  ion-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #001C30;
+    margin-bottom: 20px;
+  }
+  
+  ion-item {
+    margin-bottom: 16px;
+    border-radius: 15%;
+  }
+  
+  ion-button {
+    display: block;
+    width: 80%;
+    margin: 0 auto; 
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .Milk1{
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    top: 100px;
+    left: 0px;
+    
+    }
+    .Milk3{
+      position: absolute;
+      width: 200px;
+      height: 300px;
+      top: 250px;
+      left: 0px;
+      transform: rotate(25deg);
+      }
+    .Milk2{
+      position: absolute;
+      width: 150px;
+      height: 300px;
+      top: 200px;
+      left: 0px;
+      
+      }
+      .Pulparindo{
+        position: absolute;
+        height: 200px;
+        top: 550px;
+        left: 40px;
+        
+        }
+        .Pulparindos{
+          position: absolute;
+          height: 200px;
+          top: 550px;
+          left: -15px;
+          
+          }
+          .Gomitas{
+            position: absolute;
+            width: 200px;
+            height: 300px;
+            top: 100px;
+            left: 90%;
+            }
+            .Gomitas2{
+              position: absolute;
+              width: 200px;
+              height: 250px;
+              top: 250px;
+              left: 90%;
+              }
+           
+                .Skis{
+                  position: absolute;
+                  top: 66%;
+                  left: 70%;
+                  }
+
+
+
+/* Estilos para pantallas extra pequeñas (móviles en portrait) */
+@media (max-width: 600px) {
+  ion-card {
+    max-width: 250px;
+  }
+  ion-title {
+    font-size: 20px;
+  }
+  .card-container {
+    padding: 20px;
+    max-height: 100%;
+  }
+  .Milk1{
+    position: absolute;
+    width: 25%;
+    height: 25%;
+    top: 5%;
+    left: 0px;
+    
+    }
+    .Milk3{
+      position: absolute;
+      width: 25%;
+    height: 25%;
+    top: 16%;
+      left: 0px;
+      transform: rotate(25deg);
+      }
+    .Milk2{
+      position: absolute;
+      width: 25%;
+    height: 25%;
+    top: 10%;
+      left: 0px;
+      
+      }
+      .Pulparindo{
+        position: absolute;
+        height: 20%;
+        top: 80%;
+        left: 5%;
+        
+        }
+        .Pulparindos{
+          position: absolute;
+          height: 20%;
+          top: 80%;
+         
+          
+          }
+          .Gomitas{
+            position: absolute;
+            height: 25%;
+            width: 25%;
+            top: 5%;
+            left: 75%;
+            }
+            .Gomitas2{
+              position: absolute;
+              width: 25%;
+              height: 15%;
+              top: 20%;
+              left:75%;
+              }
+           
+                .Skis{
+                  position: absolute;
+                  top: 77%;
+                  width: 35%;
+                  height: 23%;
+                  left: 65%;
+                  }
+
+}
+
+      
+  

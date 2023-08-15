@@ -1,0 +1,203 @@
+/* Contenedor principal */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+.ojo{
+  margin: auto;
+}
+
+
+/* Estilos para la lista */
+ion-list {
+  background-color: #F5F6F7;
+}
+
+/* Estilos para los ítems de la lista */
+ion-item {
+  border-radius: 20px;
+  height: 55px;
+  width: 350px;
+  box-shadow: 1px 8px 0px #00000014;
+  --highlinght-heigh: 0px;
+  margin-bottom: 10px;
+  color: #FE0000;
+  border: 2px solid #FE0000;
+}
+
+/* Estilos para los inputs */
+ion-input {
+  font-size: 18px;
+  --padding-top: 20px;
+  --padding-bottom: 15px;
+  --padding-start: 15px;
+}
+
+/* Estilos para los padding de Ion */
+.ion-padding {
+  justify-content: center;
+}
+
+/* Estilos para los títulos y enlaces */
+h1, a {
+  color: #FE0000;
+  font-family: "Anton", sans-serif;
+}
+
+/* Estilos para el enlace de iniciar sesión */
+.iniciar {
+  cursor: pointer;
+  color: #001C30;
+}
+
+/* Estilos para los títulos secundarios */
+h2 {
+  color: #818181;
+  text-align: center;
+}
+
+/* Estilos para las imágenes */
+.Milk1 {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  top: 15%;
+  left: 0;
+}
+
+.Milk3 {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  top: 35%;
+  left: 0;
+  transform: rotate(25deg);
+}
+
+.Milk2 {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  top: 30%;
+  left: 0;
+}
+
+.Pulparindo {
+  position: absolute;
+  height: 200px;
+  top: 77%;
+  left: 0;
+}
+
+.Pulparindos {
+  position: absolute;
+  height: 200px;
+  top: 77%;
+  left: 0;
+}
+
+.Gomitas {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  top: 15%;
+  left: auto;
+  right: 0;
+}
+
+.Gomitas2 {
+  position: absolute;
+  width: 200px;
+  height: 250px;
+  top: 35%;
+  left: auto;
+  right: 0;
+}
+
+.Skis {
+  position: absolute;
+  top: 66%;
+  right: 0;
+}
+
+/* Estilos para el botón redondeado */
+.Guardar {
+  border-radius: 50%;
+}
+
+/* Estilos para la tarjeta principal */
+ion-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background-color: #F5F6F7F8;
+  border-radius: 10%;
+  height: 500px;
+}
+
+
+
+/* Estilos para pantallas muy pequeñas (móviles en landscape) */
+@media (max-width: 600px) {
+
+  ion-card {
+    width: 300px;
+    height: 450px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 45%;
+  }
+  ion-item {
+    width: 200px;
+  }
+  .Milk1 {
+    width: 100px;
+    height: 150px;
+    margin-top: 50px;
+  }
+  .Milk2 {
+    width: 100px;
+    height: 100px;
+    margin-top: 30px;
+  }
+  .Milk3 {
+    width: 100px;
+    height: 100px;
+    top: 260px;
+  }
+  .Pulparindo {
+    width: 150px;
+    height: 150px;
+    top: 83.45%;
+  }
+  .Pulparindos {
+    width: 100px;
+    height: 100px;
+    top: 90.2%;
+  }
+  .Gomitas {
+    width: 100px;
+    height: 180px;
+    margin-top: 30px;
+  }
+  .Gomitas2 {
+    width: 80px;
+    height: 100px;
+    margin-top: -20px;
+  }
+  .Skis {
+    width: 150px;
+    height: 150px;
+    top: 83.80%;
+  }
+}

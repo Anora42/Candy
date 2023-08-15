@@ -1,0 +1,192 @@
+.Logo{
+  width: 150px;
+
+  }
+  
+  .header1{
+  background-color: #FE0000;
+  }
+  
+  .contenedor{
+    background-color: antiquewhite;
+  }
+  .producto-imagen {
+    max-width: 50px;
+    max-height: 50px;
+    transition: max-width 0.3s, max-height 0.3s;
+    cursor: pointer;
+  }
+  
+  .imagen-grande {
+    max-width: 200px;
+    max-height: 200px;
+  }
+  .BotonesH{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 0px;
+    margin: 0%;
+    text-align: center
+
+  }
+  .pedi{
+    color: antiquewhite;
+    text-align: center;
+  }
+  .productos{
+    margin-right: -250px;
+
+  }
+  .Fecha{
+    margin-left:-150px;
+
+  }
+
+
+  .mini-icon{
+    color: #FE0000;
+  }
+  .custom-searchbar {
+    
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 500px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 5px;
+    box-shadow: 0px 0px 5px #FE0000;
+   
+
+  }
+  .total{
+    color: #FE0000;
+  }
+  .search-input {
+    flex-grow: 1;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 16px;
+    color: #999999;
+  }
+  
+  .search-icon {
+    background-color: #FE0000;
+    
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  
+  .search-icon ion-icon {
+    color:#ffffff;
+}
+
+.menu{
+  width: 50px;
+  height: 50px;
+  margin-right:150px;
+  }
+
+
+
+@media screen and (max-width: 480px) {
+  .Logo {
+    width: 60px;
+  }
+
+
+.header1 {
+  background-color: #FF82FA;
+}
+
+.contenedor {
+  background-color: antiquewhite;
+}
+
+  
+.BotonesH{
+  display: flex;
+  height: 0px;
+  margin: 0%;
+}
+
+
+.separacion {
+  margin-right: 30px;
+}
+
+.BotonesH h2 {
+  font-size: 16px;
+}
+
+
+
+
+.custom-searchbar {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  width: 200px;
+  height:30px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0px 0px 5px #ff00ff;
+}
+
+.search-input {
+  width: 170px;
+  height:30px;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 16px;
+  color: #999999;
+}
+
+.search-icon {
+  background-color: #ff00ff;
+  border: none;
+  border-radius: 50px;
+  padding: 7px;
+  cursor: pointer;
+}
+
+.search-icon ion-icon {
+  color: #ffffff;
+}
+
+.header1 {
+  padding-top: 20px;
+}
+
+.contenedor {
+  padding: 20px;
+}
+
+.BotonesH {
+  flex-direction: column;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.menu {
+  margin-right: 0;
+  margin-bottom: 10px;
+}
+
+.separacion {
+  margin-right: 0;
+  margin-bottom: 10px;
+}
+
+.total {
+  font-size:14px;
+}
+
+}

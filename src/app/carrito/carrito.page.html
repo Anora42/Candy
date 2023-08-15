@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Carrito de Compras
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="irAHome()">
+        <ion-icon  name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" *ngIf="productosAgrupados && getProductKeys().length > 0">
+        <div *ngFor="let key of getProductKeys()">
+          <ion-item *ngFor="let producto of productosAgrupados[key]">
+            <ion-thumbnail slot="start">
+              <img [src]="producto?.imagen">
+            </ion-thumbnail>
+            <ion-label>
+              <h2>{{ producto?.nombre }}</h2>
+              <ion-card-subtitle class="precio">{{ producto?.precio | currency }}</ion-card-subtitle>
+              <p>Cantidad: {{ producto?.cantidad }}</p>
+            </ion-label>
+            <ion-button (click)="removeProduct(producto)">Eliminar</ion-button>
+          </ion-item>
+        </div>
+      </ion-col>
+      <ion-col size="12" *ngIf="productosAgrupados && getProductKeys().length === 0">
+        <ion-text class="no-items-text">No hay productos en el carrito.</ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" class="total-container">
+        <h3>Total de la compra:</h3>
+        <h2 class="total-amount">{{ total | currency }}</h2>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <strong><p>Seleccionar Fecha Y Hora de recolleción</p></strong>
+  <!-- Agregar opciones para seleccionar el día y la hora de recolección -->
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label>Día y Hora de recolección:</ion-label>
+          <ion-datetime
+  display-format="DD/MM/YYYY"
+  picker-format="DD MMM YYYY"
+  [(ngModel)]="fechaRecoleccion"
+  (ngModelChange)="setFechaRecoleccion($event)"
+></ion-datetime>
+        </ion-item>
+      </ion-col>
+  <p>Si necesita Factura enviar <strong>Constancia de situacion fiscal </strong>a el siguiete numero <strong>249 178 7235</strong> </p>
+</ion-row>
+</ion-grid>
+<div class="ion-padding">
+  <ion-button (click)="realizarPedido()">Realizar Pedido</ion-button>
+</div>
+</ion-content>

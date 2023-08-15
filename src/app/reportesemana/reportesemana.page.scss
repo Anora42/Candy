@@ -1,0 +1,60 @@
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .report-table th,
+  .report-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .report-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .report-table tr:last-child td {
+    font-weight: bold;
+    border-top: 2px solid #ccc;
+  }
+  
+  .total-label {
+    text-align: right;
+    font-weight: bold;
+  }
+
+  .total-value {
+    text-align: right;
+    font-weight: bold;
+    color: #001C30;
+  }
+  
+    
+    /* Estilos para el encabezado de la página */
+    
+   
+    .Logo{
+      width: 100px;
+      }
+      
+      .header1{
+      background-color: #FE0000;
+      
+      }
+      
+      .BotonesH{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        margin-right: 20%;
+        
+      }
+      .separacion {
+        margin-right: 200px;
+        color:#001C30;
+      }
+    
+  

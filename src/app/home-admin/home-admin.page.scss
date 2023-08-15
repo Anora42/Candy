@@ -1,0 +1,255 @@
+.Logo{
+  width: 150px;
+
+  }
+  
+  .header1{
+  background-color: #FE0000;
+  }
+  
+  .contenedor{
+    background-color: antiquewhite;
+  }
+  
+  .BotonesH{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 0px;
+    margin: 0%;
+
+
+  }
+  .oferta-container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #FE0000;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    z-index: 1;
+  }
+  
+  .oferta-icon {
+    font-size: 18px;
+    margin-right: 20px;
+    color: #FE0000;
+    left: 150px;
+  }
+  
+  .oferta-text {
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 4px;
+    /* Añadir margen superior para separar el icono y el texto */
+    margin-top: 2px;
+  }
+  .small-card {
+    position: relative;
+  }
+  .separacion {
+    margin-right: 150px; 
+  }
+
+  .mini-icon{
+    color: #FE0000;
+  }
+  .custom-searchbar {
+    
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 500px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 5px;
+    box-shadow: 0px 0px 5px #FE0000;
+   
+
+  }
+  
+  .search-input {
+    flex-grow: 1;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 16px;
+    color: #999999;
+  }
+  
+  .search-icon {
+    background-color: #FE0000;
+    
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  
+  .search-icon ion-icon {
+    color:#ffffff;
+}
+
+.menu{
+width: 50px;
+height: 50px;
+margin-right:150px;
+}
+.small-card {
+  margin-bottom: 100px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.badge{
+color: #d20606;
+}
+.small-card img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: cover; /* Ajusta la imagen dentro de la tarjeta */
+
+}
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+
+.Detalle{
+font-size:7px;
+justify-content: center;
+align-items:center;
+margin-left:10%;
+margin-right: 10%;
+margin-top: -10%;
+background-color: #45CFDD;
+ /* Agrega una altura máxima para la tarjeta Detalle */
+ max-height: 200px;
+ overflow: hidden; /* Recorta el contenido que exceda el tamaño de la tarjeta Detalle */
+
+}
+.small-card {
+margin-bottom: 100px;
+width: 200px; /* Ajusta el valor según tus necesidades */
+
+margin-right: 5px;
+margin-left: 5px;
+overflow: hidden; /* Recorta el contenido que exceda el tamaño de la tarjeta */
+
+}
+.oferta-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 8px;
+  font-size: 24px;
+}
+.oferta-label{
+  position: absolute;
+  top: -140%;
+  left: 0;
+  margin: 8px;
+  font-size: 16px;
+}
+.Letras {
+  font-size: 5px;
+  justify-content: center;
+  align-items: center;
+  /* Agrega una altura máxima para las tarjetas Letras */
+  max-height: 150px;
+  overflow: hidden; /* Recorta el contenido que exceda el tamaño de las tarjetas Letras */
+}
+
+.editar-fab {
+--ion-color-primary: #FE0000;
+height: 34px;
+width: 40px;
+left:90%;
+}
+
+.footer-content {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 0 16px;
+background-color: #001C30;
+margin-top: 50px;
+}
+
+.footer-left {
+display: flex;
+align-items: center;
+}
+.footer-logo {
+  width: 150px;
+  height: 150px;
+  }
+  
+  .footer-right {
+  display: flex;
+  align-items: center;
+  }
+  
+.increment-button {
+  background-color: #001C30;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.increment-button:hover {
+  background-color: #45CFDD;
+}
+
+
+
+.social-icon {
+font-size: 24px;
+margin-left: 8px;
+color: white;
+width: 50px;
+height: 40px;
+}
+
+.contact-text {
+color: white;
+margin-right: 8px;
+font-size:20px;
+}
+
+
+
+
+.tamañoimg {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Eliminar{
+  color: #d20606;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+  
+
+
+@media screen and (max-width:480px){}

@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Nuevo Producto</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Imagen</ion-label>
+    <input type="file" (change)="onFileChange($event)">
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Nombre</ion-label>
+    <ion-input type="text" [(ngModel)]="nombre"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Precio</ion-label>
+    <ion-input type="number" [(ngModel)]="precio"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Precio Mayoreo</ion-label>
+    <ion-input type="number" [(ngModel)]="precioPorMayor"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Descripción</ion-label>
+    <ion-textarea [(ngModel)]="descripcion"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Categoría</ion-label>
+    <ion-select [(ngModel)]="categoria">
+      <ion-select-option value="gomitas">Gomitas</ion-select-option>
+      <ion-select-option value="chocolates">Chocolates</ion-select-option>
+      <ion-select-option value="paletas">Paletas</ion-select-option>
+      <ion-select-option value="Ofertas">Ofertas</ion-select-option>
+    </ion-select>
+  </ion-item>
+ <ion-item>
+  <ion-label>Productos existentes</ion-label>
+    <ion-input type="number" [(ngModel)]="cantidad"></ion-input>
+ </ion-item> 
+
+  <ion-button expand="full" (click)="guardarProducto()">Guardar</ion-button>
+</ion-content>

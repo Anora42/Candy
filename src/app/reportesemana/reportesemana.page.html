@@ -1,0 +1,48 @@
+<ion-content>
+ 
+  <ion-header class="header1">
+    <ion-toolbar class="header1" color="primary">
+      
+    </ion-toolbar>
+    <ion-toolbar>
+      <ion-img class="Logo" src="https://mateogutierrez.neocities.org/Logo-con-palito2.png" alt="Logo"></ion-img>
+     
+      <div class="BotonesH">
+        <h2 class="separacion" style="cursor: pointer;"><a  class="Home"(click)="irAHome()">Inicio</a></h2>
+      
+      <h3 class="separacion" style="cursor: pointer;"><strong color="secondary" >Reporte Semanal</strong></h3>
+    </div>
+    </ion-toolbar>
+  </ion-header>
+  
+  <table class="report-table">
+    <thead>
+      <tr>
+        <th>Semana</th>
+        <th>Usuario</th>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let inventario of inventario$ | async">
+        <tr *ngFor="let producto of inventario.productos">
+          <td>{{ getWeekFromDate(inventario.fechaRecoleccion) }}</td>
+          <td>{{ inventario.usuario }}</td>
+          <td>{{ producto.nombre }}</td>
+          <td>{{ producto.cantidad }}</td>
+          <td>{{ producto.precio | currency }}</td>
+        </tr>
+        <tr>
+          <td colspan="4" class="total-label">Total de compra:</td>
+          <td class="total-value">{{ inventario.totalCompra | currency }}</td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+  <div class="total-container">
+    <div class="total-label">Total de compras:</div>
+    <div class="total-value">{{ totalCompraTotal | currency }}</div>
+  </div>
+</ion-content>
