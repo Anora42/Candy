@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuardGuard } from './auth-guard.guard'; // Asegúrate de que la importación sea correcta
 
 
 
@@ -31,6 +32,7 @@ const routes: Routes = [
   },
   {
     path: 'home-admin',
+    canActivate: [AuthGuardGuard], // Agrega el guardia a esta ruta
     loadChildren: () => import('./home-admin/home-admin.module').then( m => m.HomeAdminPageModule)
   },
   {
@@ -64,22 +66,27 @@ const routes: Routes = [
   },
   {
     path: 'reportedia',
+    canActivate: [AuthGuardGuard], // Agrega el guardia a esta ruta
     loadChildren: () => import('./reportedia/reportedia.module').then( m => m.ReportediaPageModule)
   },
   {
     path: 'reportesemana',
+    canActivate: [AuthGuardGuard], // Agrega el guardia a esta ruta
     loadChildren: () => import('./reportesemana/reportesemana.module').then( m => m.ReportesemanaPageModule)
   },
   {
     path: 'reportemes',
+    canActivate: [AuthGuardGuard], // Agrega el guardia a esta ruta
     loadChildren: () => import('./reportemes/reportemes.module').then( m => m.ReportemesPageModule)
   },
   {
     path: 'pedidos',
+    canActivate: [AuthGuardGuard], // Agrega el guardia a esta ruta
     loadChildren: () => import('./pedidos/pedidos.module').then( m => m.PedidosPageModule)
   },
   {
     path: 'perfil-admin',
+    canActivate: [AuthGuardGuard], // Agrega el guardia a esta ruta
     loadChildren: () => import('./perfil-admin/perfil-admin.module').then( m => m.PerfilAdminPageModule)
   },
   {

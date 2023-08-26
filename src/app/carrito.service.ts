@@ -144,13 +144,15 @@ async guardarCarritoEnFirestore(diaCarritoId: string, semanaCarritoId: string, m
           console.log('Carrito guardado en Firestore');
 
           // También guarda el pedido en la colección "pedidos"
-          const inventarioId = uuidv4();
-          console.log('Inventario ID:', inventarioId);
-          pedidosRef.doc(inventarioId).set({
+          const pedidoId = uuidv4();
+          console.log('Inventario ID:', pedidoId);
+          pedidosRef.doc(pedidoId).set({
             usuario: email,
             fechaRecoleccion: this.getFormattedDate(this.fechaRecoleccion),
             productos: this.carrito,
-            totalCompra: this.totalCompra
+            totalCompra: this.totalCompra,            
+            pedidoId: pedidoId
+
           });
           console.log('Inventario guardado en Firestore');
         }

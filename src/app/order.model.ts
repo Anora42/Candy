@@ -1,6 +1,6 @@
 export interface Order {
   user: string;
-  productos: any[]; // Cambiar esto por el tipo de objeto que represente un producto en el pedido
+  productos: any[]; 
   totalCompra: number;
   fechaRecoleccion: Date;
   selected: boolean;

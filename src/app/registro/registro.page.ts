@@ -28,19 +28,19 @@ export class RegistroPage implements OnInit {
     private router: Router,
     private afAuth: AngularFireAuth,
     private firestore: AngularFirestore,
-    private alertController: AlertController // Add the AlertController
+    private alertController: AlertController 
   ) {}
 
   ngOnInit() {
     this.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
-      'recaptcha-container', // ID del elemento HTML del recaptcha
+      'recaptcha-container',
       {
         size: 'normal',
         callback: (response: any) => {
-          // Recaptcha verificado correctamente
+          
         },
         'expired-callback': () => {
-          // Recaptcha expirado
+        
         },
       }
     );
@@ -54,7 +54,7 @@ export class RegistroPage implements OnInit {
   }
 
   enviarCodigoVerificacion() {
-    const phoneNumber = '+52' + this.telefono; // código de país correspondiente
+    const phoneNumber = '+52' + this.telefono; 
     if (this.recaptchaVerifier) {
       firebase
         .auth()
@@ -104,7 +104,7 @@ export class RegistroPage implements OnInit {
 
   guardar() {
     if (!this.nombre || !this.apellido || !this.telefono || !this.email || !this.contrasena) {
-      // Call the showMissingFieldsAlert() function when any field is missing
+     
       this.showMissingFieldsAlert();
       return;
     }
@@ -112,7 +112,7 @@ export class RegistroPage implements OnInit {
       alert('Por favor, complete todos los campos obligatorios.');
       return;
     }
-    const verificationCode = this.codigoVerificacion; // Obtén el código de verificación ingresado por el usuario
+    const verificationCode = this.codigoVerificacion; 
     const credential = this.confirmationResult?.verificationId
       ? firebase.auth.PhoneAuthProvider.credential(
           this.confirmationResult.verificationId,

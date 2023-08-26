@@ -3,7 +3,9 @@
     width: 150px;
   
     }
-    
+    .raya{
+      color: #ffffff;
+    }
     .header1{
     background-color: #FE0000;
     }
@@ -67,8 +69,6 @@
       border-radius: 20px;
       padding: 5px;
       box-shadow: 0px 0px 5px #FE0000;
-     
-  
     }
     
     .search-input {
@@ -269,6 +269,9 @@
       width: 70px;
       margin-left: 10%;    
 }
+    .raya{
+      color: #ffffff;
+        }
     .custom-searchbar {
       justify-content: center;
       display: flex;
@@ -514,6 +517,9 @@ top:80%
   @media screen and  (max-width: 480px) {
     .Logo {
       width: 60px;
+    }
+    .raya{
+      color: #ffffff;
     }
   
     .oferta-container {
@@ -801,6 +807,9 @@ top:80%
   }
 }
 @media screen and (max-width: 369px) {
+  .raya{
+    color: #ffffff;
+  }
   .small-card {
     
     width: 130px; /* Ajusta el valor según tus necesidades */
@@ -831,7 +840,6 @@ top:80%
     font-size: 7px;
     font-weight: bold;
     margin-left: 4px;
-    /* Añadir margen superior para separar el icono y el texto */
     margin-top: 2px;
   }
   .small-card {
@@ -890,4 +898,46 @@ top:80%
       }
     }
   }
+}
+
+@media screen and (max-width: 330px) {
+  .custom-searchbar {
+      
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 150px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 5px;
+    box-shadow: 0px 0px 5px #FE0000;
+  }
+  
+  .search-input {
+    flex-grow: 1;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 16px;
+    color: #999999;
+  }
+  
+  .search-icon {
+    background-color: #FE0000;
+    
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  
+  .search-icon ion-icon {
+    color:#ffffff;
+}
+.search-input{
+  width: 100px;
+  font-size: 10px;
+}
 }

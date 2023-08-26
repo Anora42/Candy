@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { tap } from 'rxjs/operators';
 import { concat } from 'rxjs';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 interface Producto {
   id: string;
@@ -66,6 +67,7 @@ export class HomeAdminPage implements OnInit {
     private modalController: ModalController,
     private firestore: AngularFirestore,
     private toastController: ToastController,
+    private afAuth: AngularFireAuth,
     private alertController: AlertController,
     private router: Router
   ) {
@@ -85,9 +87,11 @@ export class HomeAdminPage implements OnInit {
   }
   
   ngOnInit() {
-    this.productosCollection = this.firestore.collection<Producto>('productos');
-    this.productos$ = this.productosCollection.valueChanges();
-  
+    this.afAuth.authState.subscribe(async user => {
+      if (user) {
+        // El usuario está autenticado, carga la vista de administrador
+        this.productosCollection = this.firestore.collection<Producto>('productos');
+        this.productos$ = this.productosCollection.valueChanges();
    
   
     this.productos$.subscribe(productos => {
@@ -104,7 +108,9 @@ export class HomeAdminPage implements OnInit {
     this.usuariosCollection = this.firestore.collection<Usuario>('usuarios');
     this.usuarios$ = this.usuariosCollection.valueChanges();
   }
-  
+
+});
+}
 
   async mostrarDetalle(producto: any) {
     const modal = await this.modalController.create({

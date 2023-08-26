@@ -5,7 +5,7 @@
     </ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="irAHome()">
-        <ion-icon  name="close"></ion-icon>
+        <ion-icon name="close"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -43,25 +43,24 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  <strong><p>Seleccionar Fecha Y Hora de recolleción</p></strong>
+  <strong>
+    <p>Seleccionar Fecha Y Hora de recolleción</p>
+  </strong>
   <!-- Agregar opciones para seleccionar el día y la hora de recolección -->
   <ion-grid>
     <ion-row>
       <ion-col size="12">
         <ion-item>
           <ion-label>Día y Hora de recolección:</ion-label>
-          <ion-datetime
-  display-format="DD/MM/YYYY"
-  picker-format="DD MMM YYYY"
-  [(ngModel)]="fechaRecoleccion"
-  (ngModelChange)="setFechaRecoleccion($event)"
-></ion-datetime>
+          <ion-datetime display-format="DD/MM/YYYY" picker-format="DD MMM YYYY" [(ngModel)]="fechaRecoleccion"
+            (ngModelChange)="setFechaRecoleccion($event)"></ion-datetime>
         </ion-item>
       </ion-col>
-  <p>Si necesita Factura enviar <strong>Constancia de situacion fiscal </strong>a el siguiete numero <strong>249 178 7235</strong> </p>
-</ion-row>
-</ion-grid>
-<div class="ion-padding">
-  <ion-button (click)="realizarPedido()">Realizar Pedido</ion-button>
-</div>
+      <p>Si necesita Factura enviar <strong>Constancia de situacion fiscal </strong>a el siguiete correo
+        <strong>dulcerialaestrella622@gmail.com</strong> </p>
+    </ion-row>
+  </ion-grid>
+  <div class="ion-padding">
+    <ion-button (click)="realizarPedido()">Realizar Pedido</ion-button>
+  </div>
 </ion-content>
