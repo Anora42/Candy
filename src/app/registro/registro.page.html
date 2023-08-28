@@ -1,5 +1,6 @@
 <ion-content class="ion-padding">
 
+
   <img class="Milk1"src="https://mateogutierrez.neocities.org/milki.png">
   <img class="Milk3" src="https://mateogutierrez.neocities.org/milk22.png">
   <img class="Milk2" src="https://mateogutierrez.neocities.org/milk22.png">
@@ -37,9 +38,7 @@
 
       <ion-item lines="full">
         <ion-label position="stacked">Contraseña</ion-label>
-        <!-- Utilice un tipo dinámico para el campo de entrada -->
         <ion-input [type]="showPassword ? 'text' : 'password'" [(ngModel)]="contrasena"></ion-input>
-        <!-- Agregar icono de ojo para alternar la visibilidad de la contraseña -->
         <ion-icon class="ojo" slot="end" [name]="showPassword ? 'eye-off' : 'eye'" (click)="togglePassword()"></ion-icon>
       </ion-item>
     </ion-list>

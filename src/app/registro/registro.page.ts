@@ -5,6 +5,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import { AlertController, ToastController } from '@ionic/angular';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-registro',
@@ -28,7 +29,9 @@ export class RegistroPage implements OnInit {
     private router: Router,
     private afAuth: AngularFireAuth,
     private firestore: AngularFirestore,
-    private alertController: AlertController 
+    private alertController: AlertController,
+    private sanitizer: DomSanitizer,
+
   ) {}
 
   ngOnInit() {
@@ -60,11 +63,10 @@ export class RegistroPage implements OnInit {
         .auth()
         .signInWithPhoneNumber(phoneNumber, this.recaptchaVerifier)
         .then((confirmationResult) => {
-          // El código de verificación se ha enviado correctamente
+          // El codigo de verificación se ha enviado 
           this.confirmationResult = confirmationResult;
         })
         .catch((error) => {
-          // Ocurrió un error al enviar el código de verificación
           console.error('Error al enviar el código de verificación:', error);
         });
     } else {
@@ -103,37 +105,46 @@ export class RegistroPage implements OnInit {
   }
 
   guardar() {
+
+      const safeNombre = encodeURIComponent(this.nombre);
+      const safeApellido = encodeURIComponent(this.apellido);
+      const safeTelefono = encodeURIComponent(this.telefono);
+      const safeEmail = encodeURIComponent(this.email);
+  
+      localStorage.setItem('nombre', safeNombre);
+      localStorage.setItem('apellido', safeApellido);
+      localStorage.setItem('telefono', safeTelefono);
+      localStorage.setItem('email', safeEmail);
     if (!this.nombre || !this.apellido || !this.telefono || !this.email || !this.contrasena) {
-     
       this.showMissingFieldsAlert();
       return;
     }
+    
     if (!this.nombre || !this.apellido || !this.telefono || !this.email || !this.contrasena) {
       alert('Por favor, complete todos los campos obligatorios.');
       return;
     }
-    const verificationCode = this.codigoVerificacion; 
+    const verificationCode = this.codigoVerificacion;
     const credential = this.confirmationResult?.verificationId
       ? firebase.auth.PhoneAuthProvider.credential(
           this.confirmationResult.verificationId,
           verificationCode
         )
       : null;
-
+  
     if (!credential) {
-      console.error('No se pudo obtener la credencial de verificación');
+      this.showMissingVerificationCredentialAlert();
       return;
     }
 
     this.afAuth
-      .createUserWithEmailAndPassword(this.email, this.contrasena)
-      .then((userCredential) => {
-        const { user } = userCredential;
+    .createUserWithEmailAndPassword(this.email, this.contrasena)
+    .then((userCredential) => {
+      const { user } = userCredential;
 
-        if (user) {
-          user.updatePhoneNumber(credential)
-            .then(() => {
-              // Guardar datos adicionales en Firestore
+      if (user) {
+        user.updatePhoneNumber(credential)
+          .then(() => {
               return this.firestore.collection('usuarios').doc(user.uid).set({
                 nombre: this.nombre,
                 apellido: this.apellido,
@@ -149,13 +160,23 @@ export class RegistroPage implements OnInit {
             .catch((error: any) => {
               console.error('Error al actualizar el número de teléfono:', error);
             });
-        } else {
-          throw new Error('El usuario no está disponible');
-        }
-      })
-      .catch((error: any) => {
-        console.error('Error al registrar usuario y guardar los datos:', error);
-      });
+          } else {
+            throw new Error('El usuario no está disponible');
+          }
+        })
+        .catch((error: any) => {
+          console.error('Error al registrar usuario y guardar los datos:', error);
+        });
+    
+  }
+  showMissingVerificationCredentialAlert() {
+    this.alertController.create({
+      header: 'Error de verificación',
+      message: 'No se pudieron obtener las credenciales de verificación.',
+      buttons: ['OK']
+    }).then(alert => {
+      alert.present();
+    });
   }
   togglePassword() {
     this.showPassword = !this.showPassword;

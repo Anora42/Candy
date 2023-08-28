@@ -115,7 +115,7 @@ export class NuevoProductoModalPage {
               // Cierra el modal
               this.modalController.dismiss();
       
-              // Muestra un mensaje de éxito
+              // Muestra un mensaje de exito
               const toast = await this.toastController.create({
                 message: 'Nuevo producto creado exitosamente',
                 duration: 2000,
@@ -135,7 +135,7 @@ export class NuevoProductoModalPage {
             console.error('Error durante la carga de la imagen:', error);
           },
           () => {
-            console.log('Upload completo'); // Verifica si se completó la carga de la imagen correctamente
+            console.log('Upload completo'); // Verifica si se completo la carga de la imagen correctamente
           }
         );
       } else {

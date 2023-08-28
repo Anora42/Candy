@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CarritoService } from '../carrito.service';
 import { Router } from '@angular/router';
-import { AngularFireAuth } from '@angular/fire/compat/auth'; // Agrega esta importación
+import { AngularFireAuth } from '@angular/fire/compat/auth'; 
 import { AlertController } from '@ionic/angular';
 
 @Component({
@@ -11,7 +11,7 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./reportedia.page.scss'],
 })
 export class ReportediaPage implements OnInit {
-  inventario$!: Observable<any[]>; // Usar "!" para indicar que será inicializada
+  inventario$!: Observable<any[]>; 
   totalCompraTotal: number = 0;
   contrasena: string = 'DulceriaEstrella';
 
@@ -28,7 +28,7 @@ export class ReportediaPage implements OnInit {
           {
             text: 'Ok',
             handler: () => {
-              this.router.navigate(['/login']); // Redirige a la página de inicio de sesión u otra vista
+              this.router.navigate(['/login']); 
             }
           }
         ]
@@ -41,7 +41,7 @@ export class ReportediaPage implements OnInit {
     this.afAuth.authState.subscribe(async user => {
       if (user) {
         if (user.email === 'solucionesgap1@gmail.com' && this.contrasena === 'DulceriaEstrella') {
-          // Autenticar al administrador con Firebase Authentication
+         
           try {
 
             this.loadReporteInventarioView();
@@ -49,11 +49,10 @@ export class ReportediaPage implements OnInit {
             this.showInvalidAdminAlert();
           }
         } else {
-          // Usuario autenticado, pero no es administrador, mostrar alerta y redirigir
+         
           this.showInvalidAdminAlert();
         }
       } else {
-        // Usuario no autenticado, redirigir a la página de inicio de sesión
         this.router.navigate(['/home']);
       }
     });
@@ -61,7 +60,7 @@ export class ReportediaPage implements OnInit {
 
   loadReporteInventarioView() {
     this.inventario$ = this.carritoService.getinventario(); // Obtener la lista de todos los pedidos
-    this.calcularTotalCompra(); // Calcular la suma total al cargar el componente
+    this.calcularTotalCompra(); 
   }
 
   irAHome() {

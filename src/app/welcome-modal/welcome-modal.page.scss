@@ -1,5 +1,5 @@
 ion-content {
-    --background: rgba(255, 173, 173, 0.8); // Fondo rosado transparente
+    --background: rgba(255, 173, 173, 0.8);
   }
   
   .welcome-modal-backdrop {
@@ -13,8 +13,8 @@ ion-content {
 
   
   .welcome-modal-content {
-    background-color: #FFEBEE; // Fondo rosado claro
-    padding: 30px; // Mayor espacio interno
+    background-color: #FFEBEE; 
+    padding: 30px; 
     border-radius: 20px;
     text-align: center;
     max-width: 90%;
@@ -24,29 +24,33 @@ ion-content {
 }
   .Logo {
     height: 300px;
-    margin-top: 20px; // Ajusta el margen superior según sea necesario
+    margin-top: 20px; 
   }
   
   .Inicio {
-    color: #FF4081; // Rosa más vibrante
-    font-size: 1.2em; // Tamaño de fuente aumentado
-    font-weight: bold; // Fuente en negrita
+    color: #FF4081; 
+    font-size: 1.2em; 
+    font-weight: bold;
   }
   
-  /* Añade un estilo llamativo para el párrafo de bienvenida */
   .welcome-text {
     font-size: 1.5em;
-    color: #FF5722; // Naranja brillante
+    color: #FF5722;
     margin-bottom: 15px;
   }
   
   .welcome-modal-content {
-    // ... otros estilos ...
   
-    @media (min-width: 8px) {
+    @media (max-width: 1500px) {
       max-width: 60%;
-      max-height: 50%; // Cambia el ancho máximo para pantallas más grandes
-      margin: 0 auto; // Centra horizontalmente el modal
-      top: 20%; // Ajusta la posición vertical
+      max-height: 50%;
+      margin: 0 auto; 
+      top: 20%; 
+}
+
+
+.Logo {
+  height: 250px;
+  margin-top: 20px; 
 }
 }

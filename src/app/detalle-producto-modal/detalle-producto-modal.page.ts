@@ -15,7 +15,6 @@ export class DetalleProductoModalPage  {
   }
   
   imagenNoDisponible(event: any) {
-    // Lógica para manejar el caso de imagen no disponible
     event.target.src = 'ruta-de-la-imagen-por-defecto';
   }
 

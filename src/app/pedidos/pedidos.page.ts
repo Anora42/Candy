@@ -23,7 +23,6 @@ export class PedidosPage implements OnInit {
     private alertController: AlertController,
     private firestore: AngularFirestore,
     private navCtrl: NavController
-
   ) {}
 
   ngOnInit() {
@@ -33,13 +32,17 @@ export class PedidosPage implements OnInit {
   fetchAllOrders() {
     this.pedidosService.getAllOrders().subscribe((orders: Order[]) => {
       this.orders = orders;
-      
     });
   }
- 
 
+  async eliminarPedido(pedidoId: string, inventarioId: string) {
+    console.log(
+      'Eliminar pedido y inventario. Pedido ID:',
+      pedidoId,
+      'inventario ID:',
+      inventarioId
+    );
 
-  async eliminarPedido(pedidoId: string) {
     const alert = await this.alertController.create({
       header: 'Confirmar entrega',
       message: '¿El pedido fue realizado?',
@@ -48,27 +51,20 @@ export class PedidosPage implements OnInit {
           text: 'Pedido Cancelado',
           handler: async () => {
             try {
-              // Eliminar el pedido de la colección "pedidos"
+              console.log(
+                'Eliminando pedido de la colección "pedidos". Pedido ID:',
+                pedidoId
+              );
               await this.firestore.collection('pedidos').doc(pedidoId).delete();
-          
-              // Eliminar el pedido de la colección "inventario"
-              await this.firestore.collection('inventario').doc(pedidoId).delete();
-          
-              const toast = await this.toastController.create({
-                message: 'Pedido eliminado correctamente',
-                duration: 2000,
-                position: 'bottom',
-              });
-              toast.present();
-            } catch (error) {
-              console.error('Error al eliminar el pedido:', error);
-            }}},
-          
-        {
-          text: 'Pedido Entregado',
-          handler: async () => {
-            try {
-              await this.firestore.collection('pedidos').doc(pedidoId).delete();
+
+              console.log(
+                'Eliminando registro de inventario. Inventario ID:',
+                inventarioId
+              );
+              await this.firestore
+                .collection('inventario')
+                .doc(inventarioId)
+                .delete();
 
               const toast = await this.toastController.create({
                 message: 'Pedido eliminado correctamente',
@@ -81,6 +77,25 @@ export class PedidosPage implements OnInit {
             }
           },
         },
+
+        {
+          text: 'Pedido Entregado',
+  cssClass: 'pedido-entregado',
+  handler: async () => {
+            try {
+              await this.firestore.collection('pedidos').doc(pedidoId).delete();
+        
+              const toast = await this.toastController.create({
+                message: 'Pedido eliminado correctamente',
+                duration: 2000,
+                position: 'bottom',
+              });
+              toast.present();
+            } catch (error) {
+              console.error('Error al eliminar el pedido:', error);
+            }
+          },
+        }
       ],
     });
     await alert.present();
@@ -105,8 +120,8 @@ export class PedidosPage implements OnInit {
     console.log('Navegando a HomeAdmin');
     this.router.navigate(['/home-admin'], { queryParams: { reload: 'true' } });
   }
-  // Método para cambiar el estado de selección del pedido
+  // Método para cambiar el estado de seleccion del pedido
   toggleOrderSelection(order: Order) {
     order.selected = !order.selected;
-  }
+  }
 }

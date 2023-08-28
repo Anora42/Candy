@@ -27,7 +27,6 @@ export class PerfilPage implements OnInit {
   ngOnInit() {
     this.afAuth.authState.subscribe(user => {
       if (user) {
-        // Usuario autenticado, obtener su ID
         const userId = user.uid;
         this.userId = userId;
         this.obtenerDatosUsuario(userId);
@@ -39,7 +38,6 @@ export class PerfilPage implements OnInit {
     const userDocRef = this.firestore.collection('usuarios').doc(userId);
     userDocRef.get().subscribe(doc => {
       if (doc.exists) {
-        // El documento del usuario existe, obtener sus datos
         const data = doc.data() as { nombre: string, apellido: string, telefono: string, correo: string };
         this.nombre = data.nombre;
         this.apellido = data.apellido;
@@ -101,10 +99,8 @@ export class PerfilPage implements OnInit {
       this.afAuth.signOut()
         .then(() => {
           this.router.navigate(['/login']);
-          // Cierre de sesión exitoso, realiza cualquier acción adicional necesaria
         })
         .catch((error) => {
-          // Ocurrió un error al cerrar sesión, maneja el error adecuadamente
           console.error('Error al cerrar sesión:', error);
         });
     }

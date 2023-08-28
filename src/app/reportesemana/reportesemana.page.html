@@ -26,23 +26,20 @@
       </tr>
     </thead>
     <tbody>
-      <ng-container *ngFor="let inventario of inventario$ | async">
-        <tr *ngFor="let producto of inventario.productos">
-          <td>{{ getWeekFromDate(inventario.fechaRecoleccion) }}</td>
-          <td>{{ inventario.usuario }}</td>
-          <td>{{ producto.nombre }}</td>
-          <td>{{ producto.cantidad }}</td>
-          <td>{{ producto.precio | currency }}</td>
+      <ng-container *ngFor="let weekData of weeklyData">
+        <tr *ngFor="let product of weekData.products">
+          <td>{{ weekData.week }}</td>
+          <td>{{ weekData.user }}</td>
+          <td>{{ product.nombre }}</td>
+          <td>{{ product.cantidad }}</td>
+          <td>{{ product.precio | currency }}</td>
         </tr>
         <tr>
           <td colspan="4" class="total-label">Total de compra:</td>
-          <td class="total-value">{{ inventario.totalCompra | currency }}</td>
+          <td class="total-value">{{ weekData.totalCompra | currency }}</td>
         </tr>
       </ng-container>
     </tbody>
   </table>
-  <div class="total-container">
-    <div class="total-label">Total de compras:</div>
-    <div class="total-value">{{ totalCompraTotal | currency }}</div>
-  </div>
+ 
 </ion-content>

@@ -44,7 +44,6 @@
     font-size: 14px;
     font-weight: bold;
     margin-left: 4px;
-    /* Añadir margen superior para separar el icono y el texto */
     margin-top: 2px;
   }
   .small-card {
@@ -111,7 +110,7 @@ color: #d20606;
 .small-card img {
   max-width: 80%;
   max-height: 80%;
-  object-fit: cover; /* Ajusta la imagen dentro de la tarjeta */
+  object-fit: cover; 
 
 }
 .image-container {
@@ -130,18 +129,17 @@ margin-left:10%;
 margin-right: 10%;
 margin-top: -10%;
 background-color: #45CFDD;
- /* Agrega una altura máxima para la tarjeta Detalle */
  max-height: 200px;
- overflow: hidden; /* Recorta el contenido que exceda el tamaño de la tarjeta Detalle */
+ overflow: hidden; 
 
 }
 .small-card {
 margin-bottom: 100px;
-width: 200px; /* Ajusta el valor según tus necesidades */
+width: 200px; 
 
 margin-right: 5px;
 margin-left: 5px;
-overflow: hidden; /* Recorta el contenido que exceda el tamaño de la tarjeta */
+overflow: hidden; 
 
 }
 .oferta-icon {
@@ -162,9 +160,8 @@ overflow: hidden; /* Recorta el contenido que exceda el tamaño de la tarjeta */
   font-size: 5px;
   justify-content: center;
   align-items: center;
-  /* Agrega una altura máxima para las tarjetas Letras */
   max-height: 150px;
-  overflow: hidden; /* Recorta el contenido que exceda el tamaño de las tarjetas Letras */
+  overflow: hidden; 
 }
 
 .editar-fab {

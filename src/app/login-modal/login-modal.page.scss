@@ -1,5 +1,5 @@
 ion-content {
-    --background: #AEE4FF; // Fondo rosado transparente
+    --background: #AEE4FF;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,8 +21,8 @@ ion-content {
   .modal-button {
     background-color: var(--ion-color-primary);
     color: white;
-    border: 2px solid #FE0000; /* Añade un borde de 2px sólido */
-    border-radius: 8px; /* Añade bordes redondeados */
+    border: 2px solid #FE0000;
+    border-radius: 8px;
   }
   
   .welcome-modal-content {

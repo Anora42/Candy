@@ -40,10 +40,10 @@
       <ion-list *ngIf="orders.length > 0" class="pedidos">
         <ion-item *ngFor="let order of orders">
           <ion-icon
-          class="Eliminar"
-          name="trash-outline"
+          class="palomita-verde"
+          name="checkmark-done-circle-outline"
           expand="full"
-          (click)="eliminarPedido(order.pedidoId)"
+          (click)="eliminarPedido(order.pedidoId, order.inventarioId)" 
         ></ion-icon>
           <ion-label>Usuario: {{ order.user }}</ion-label>
     
@@ -65,7 +65,7 @@
               ></ion-img>
             </ion-item>
           </ion-list>
-          <ion-label class="total">Total Compra: {{ order.totalCompra }}</ion-label>
+          <ion-label class="total">Total Compra: {{ order.totalCompra | number:'1.2-2' }}</ion-label>
     
          
           <ion-label class="Fecha">Fecha Recolección: {{ formatFechaRecoleccion(order.fechaRecoleccion) }}</ion-label>

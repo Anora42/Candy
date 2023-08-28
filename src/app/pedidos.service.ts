@@ -12,4 +12,8 @@ export class PedidosService {
   getAllOrders(): Observable<Order[]> {
     return this.firestore.collection<Order>('pedidos').valueChanges();
   }
+getAllInventario(): Observable<any[]> {
+  return this.firestore.collection('inventario').valueChanges();
+}
+
 }

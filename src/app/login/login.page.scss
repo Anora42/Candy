@@ -5,119 +5,130 @@
   align-items: center;
   height: 70vh;
 }
-.ojo{
+
+.ojo {
   margin: auto;
 }
 
-ion-list{
+ion-list {
   background-color: #F5F6F7;
 }
-  
-  ion-item {
-    border-radius: 20px;
-    height: 55px;
-    width: 350px;
-    box-shadow: 1px 8px 0px #00000014;
-    --highlinght-heigh:0px;
-    margin-bottom: 10px;
-    color: #FE0000;
-    border: 2px solid #FE0000;
-  }
 
-  ion-input{
-    font-size: 18px;
-    --padding-top: 20px;
-    --padding-bottom:15px;
-    --padding-start:15px;
-  }
-  .ion-padding{
-    justify-content: center;
-  }
-
-  h1,a{
-    color: #FE0000;
-    font-family: "Anton", sans-serif;
-}
-.admin{
-  color:#001C30;
-  cursor:pointer;
+ion-item {
+  border-radius: 20px;
+  height: 55px;
+  width: 350px;
+  box-shadow: 1px 8px 0px #00000014;
+  --highlinght-heigh: 0px;
+  margin-bottom: 10px;
+  color: #FE0000;
+  border: 2px solid #FE0000;
 }
 
-h2{
+ion-input {
+  font-size: 18px;
+  --padding-top: 20px;
+  --padding-bottom: 15px;
+  --padding-start: 15px;
+}
+
+.ion-padding {
+  justify-content: center;
+}
+
+h1,
+a {
+  color: #FE0000;
+  font-family: "Anton", sans-serif;
+}
+
+.admin {
+  color: #001C30;
+  cursor: pointer;
+}
+
+h2 {
   text-align: center;
-  
-}
-.Milk1{
-position: absolute;
-width: 250px;
-height: 300px;
-top: 100px;
-left: 0px;
 
 }
-.Milk3{
+
+.Milk1 {
+  position: absolute;
+  width: 250px;
+  height: 300px;
+  top: 100px;
+  left: 0px;
+
+}
+
+.Milk3 {
   position: absolute;
   width: 200px;
   height: 300px;
   top: 300px;
   left: 0px;
   transform: rotate(25deg);
-  }
-.Milk2{
+}
+
+.Milk2 {
   position: absolute;
   width: 200px;
   height: 300px;
   top: 200px;
   left: 0px;
-  
-  }
-  .Pulparindo{
-    position: absolute;
-    height: 200px;
-    top: 77%;
-    left: 0;
-    
-    }
-    .Pulparindos{
-      position: absolute;
-      height: 200px;
-      top: 77%;
-      left: 0;
-      
-      }
-      .Gomitas{
-        position: absolute;
-        width: 200px;
-        height: 300px;
-        top: 15%;
-        left: auto;
-        right: 0;
 
-        }
-        .Gomitas2{
-          position: absolute;
-          width: 200px;
-          height: 250px;
-          top: 35%;
-          left:auto;
-          right: 0;
-
-        }
-
-  
-
-              .Skis{
-                position: absolute;
-                top: 66%;
-                right: 0;
-
-              }
-
-.Guardar{
-border-radius: 50%;
 }
 
-ion-card{
+.Pulparindo {
+  position: absolute;
+  height: 200px;
+  top: 77%;
+  left: 0;
+
+}
+
+.Pulparindos {
+  position: absolute;
+  height: 200px;
+  top: 77%;
+  left: 0;
+
+}
+
+.Gomitas {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  top: 15%;
+  left: auto;
+  right: 0;
+
+}
+
+.Gomitas2 {
+  position: absolute;
+  width: 200px;
+  height: 250px;
+  top: 35%;
+  left: auto;
+  right: 0;
+
+}
+
+
+
+.Skis {
+  position: absolute;
+  top: 66%;
+  right: 0;
+
+}
+
+.Guardar {
+  border-radius: 50%;
+}
+
+ion-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -131,77 +142,86 @@ ion-card{
   border-radius: 10%;
   height: 500px;
 }
-.Volver{
+
+.Volver {
   justify-content: center;
   text-align: center;
 }
+
 .ion-padding {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items:center;
+  align-items: center;
 }
 
 
- @media (max-width: 600px) {
-  
-  ion-card{
+@media (max-width: 600px) {
+
+  ion-card {
     width: 300px;
     height: 450px;
     left: 45%;
 
   }
 
-  ion-item{
+  ion-item {
     width: 200px;
   }
 
-  ion-card button{
+  ion-card button {
     width: 100%;
   }
 
-  .Milk1{
+  .Milk1 {
     width: 100px;
     height: 150px;
     margin-top: 50px;
   }
-  .Milk2{
+
+  .Milk2 {
     width: 100px;
     height: 100px;
     margin-top: 30px;
   }
-  .Milk3{
+
+  .Milk3 {
     width: 100px;
     height: 100px;
     position: absolute;
     top: 260px;
   }
-  .Pulparindo{
+
+  .Pulparindo {
     width: 150px;
     height: 150px;
     position: absolute;
     top: 83.45%;
   }
-  .Pulparindos{
+
+  .Pulparindos {
     width: 100px;
     height: 100px;
     position: absolute;
     top: 88.2%;
   }
-  .Gomitas{ 
+
+  .Gomitas {
     width: 100px;
     height: 180px;
     margin-top: 30px;
   }
-  .Gomitas2{
+
+  .Gomitas2 {
     width: 80px;
     height: 100px;
     margin-top: -20px;
   }
-  .Skis{
+
+  .Skis {
     width: 150px;
     height: 150px;
     position: absolute;
-    top:83.15%;
-}
+    top: 83.15%;
+  }
 }

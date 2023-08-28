@@ -271,7 +271,6 @@
     }
    }
   
-  //Pantallas pequeñas (móviles en landscape de menos de 768px)
   @media (max-width: 715px) { 
   
     .Logo{
@@ -492,7 +491,6 @@
   }
    }
   
-  //Pantallas muy pequeñas (móviles en portrait de menos de 576px)
   @media (max-width: 520px) { 
     .perfil{
       width: 350px;
@@ -819,14 +817,14 @@
    }
   .small-card {
     
-    width: 100px; /* Ajusta el valor según tus necesidades */
+    width: 100px;
     height: 140px;
   }
   
   .small-card img {
     margin: 0px;
     max-width: 80px;
-    max-height: 80px; /* Ajusta el valor según tus necesidades */
+    max-height: 80px;
   }
   .tamañoimg{
     width: 60px;
@@ -1201,7 +1199,6 @@
     }
    }
   
-  //Pantallas pequeñas (móviles en landscape de menos de 768px)
   @media (max-width: 715px) { 
   
     .Logo{
@@ -1422,7 +1419,6 @@
   }
    }
   
-  //Pantallas muy pequeñas (móviles en portrait de menos de 576px)
   @media (max-width: 520px) { 
     .perfil{
       width: 350px;
@@ -1749,14 +1745,14 @@
    }
   .small-card {
     
-    width: 100px; /* Ajusta el valor según tus necesidades */
+    width: 100px; 
     height: 140px;
   }
   
   .small-card img {
     margin: 0px;
     max-width: 80px;
-    max-height: 80px; /* Ajusta el valor según tus necesidades */
+    max-height: 80px; 
   }
   .tamañoimg{
     width: 60px;

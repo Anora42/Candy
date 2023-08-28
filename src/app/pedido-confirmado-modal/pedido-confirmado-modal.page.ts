@@ -1,5 +1,3 @@
-// pedido-confirmado-modal.page.ts
-
 import { Component, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { Producto } from '../producto.model';

@@ -71,7 +71,7 @@ export class CarritoPage implements OnInit {
   
 
   removeProduct(producto: Producto) {
-    // Encontrar el índice del producto en el carrito
+    
     const index = this.carrito.findIndex((p) => p.nombre === producto.nombre);
   
     // Si el producto está en el carrito, reducir su cantidad en uno
@@ -108,45 +108,52 @@ export class CarritoPage implements OnInit {
 
   async realizarPedido() {
     if (this.carritoService.fechaRecoleccion) {
-      // Crear un diálogo de confirmación
-      const confirmacion = await this.mostrarDialogoConfirmacion();
-      
-      if (confirmacion) {
-        const diaCarritoId = 'some-unique-id';
-        const semanaCarritoId = 'some-unique-id';
-        const mesCarritoId = 'some-unique-id';
-        this.carritoService.guardarCarritoEnFirestore(diaCarritoId, semanaCarritoId, mesCarritoId);
+      if (this.carritoService.getCarrito().length === 0) {
+        // Mostrar una alerta indicando que el carrito está vacío
+        await this.mostrarAlertaCarritoVacio();
+      } else {
+        const confirmacion = await this.mostrarDialogoConfirmacion();
 
+        if (confirmacion) {
+          const diaCarritoId = 'some-unique-id';
+          const semanaCarritoId = 'some-unique-id';
+          const mesCarritoId = 'some-unique-id';
+          this.carritoService.guardarCarritoEnFirestore(diaCarritoId, semanaCarritoId, mesCarritoId);
 
+          await this.actualizarCantidadesEnBaseDeDatos();
 
-      // Agregar la llamada a guardarPedidoEnPedidos()
-      this.carritoService.guardarPedidoEnPedidos(diaCarritoId, semanaCarritoId, mesCarritoId);
+          // Muestra un modal de confirmación con los detalles del pedido
+          const modal = await this.modalController.create({
+            component: PedidoConfirmadoModalPage,
+            componentProps: {
+              productos: this.carritoService.getCarrito(),
+              totalCompra: this.carritoService.totalCompra,
+              fechaRecoleccion: this.carritoService.fechaRecoleccion,
+            },
+          });
 
-      await this.actualizarCantidadesEnBaseDeDatos();
+          // Descarta el modal y vaciar el carrito cuando esté cerrado
+          modal.onDidDismiss().then(() => {
+            this.carritoService.vaciarCarrito();
+          });
 
-      
-
-         // Mostrar un modal de confirmación con los detalles del pedido
-     const modal = await this.modalController.create({
-    component: PedidoConfirmadoModalPage,
-    componentProps: {
-      productos: this.carritoService.getCarrito(),
-      totalCompra: this.carritoService.totalCompra,
-      fechaRecoleccion: this.carritoService.fechaRecoleccion, // Pass the fechaRecoleccion property
-    },
-  });
-  
-      // Descartar el modal y vaciar el carrito cuando esté cerrado
-      modal.onDidDismiss().then(() => {
-        this.carritoService.vaciarCarrito();
-      });
-  
-      await modal.present();
+          await modal.present();
+        }
+      }
     } else {
       console.error('Por favor, selecciona una fecha y hora de recolección válidas.');
-    }
-  }
-}
+    }
+  }
+
+  async mostrarAlertaCarritoVacio() {
+    const alert = await this.alertController.create({
+      header: 'Carrito vacío',
+      message: 'No puedes realizar un pedido con el carrito vacío.',
+      buttons: ['OK'],
+    });
+
+    await alert.present();
+  }
 irAHome(){
   this.router.navigate(['/home']);
 }

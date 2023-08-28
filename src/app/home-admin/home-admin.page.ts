@@ -55,10 +55,8 @@ export class HomeAdminPage implements OnInit {
  
 
 
-   // Propiedad para almacenar los productos
 
   imagenNoDisponible(event: any) {
-    // Lógica para manejar el caso de imagen no disponible
     event.target.src = 'ruta-de-la-imagen-por-defecto';
   }
 
@@ -89,14 +87,13 @@ export class HomeAdminPage implements OnInit {
   ngOnInit() {
     this.afAuth.authState.subscribe(async user => {
       if (user) {
-        // El usuario está autenticado, carga la vista de administrador
         this.productosCollection = this.firestore.collection<Producto>('productos');
         this.productos$ = this.productosCollection.valueChanges();
    
   
     this.productos$.subscribe(productos => {
-      this.productos = productos; // Asignar productos a la propiedad
-      console.log(this.productos); // Verifica que los productos se hayan asignado correctamente
+      this.productos = productos; 
+      console.log(this.productos); 
   
       this.productos.forEach(producto => {
         if (!this.categorias.includes(producto.categoria)) {
@@ -131,10 +128,8 @@ export class HomeAdminPage implements OnInit {
 
     modal.onDidDismiss().then(data => {
       if (data && data.data && data.data.success) {
-        // Actualiza la vista o realiza alguna acción después de guardar los cambios
         console.log('Cambios guardados con éxito');
       } else {
-        // No se guardaron los cambios o se canceló la edición
         console.log('Edición cancelada');
       }
     });
@@ -155,15 +150,15 @@ export class HomeAdminPage implements OnInit {
         {
           text: 'Eliminar',
           handler: async () => {
-            // Realizar la eliminación del producto
+            // Realiza la eliminación del producto
             try {
               const productosRef = this.firestore.collection('productos', ref => ref.where('nombre', '==', nombre));
               const productosSnapshot = await productosRef.get().toPromise();
               if (productosSnapshot && !productosSnapshot.empty) {
-                // Obtener el ID del primer documento coincidente
+                // Obtener el id del documento 
                 const productoId = productosSnapshot.docs[0].id;
                 await this.firestore.collection('productos').doc(productoId).delete();
-                // Mostrar mensaje de éxito
+                // Mostrar mensaje de exito
                 const toast = await this.toastController.create({
                   message: 'Producto eliminado correctamente',
                   duration: 2000,
@@ -175,7 +170,6 @@ export class HomeAdminPage implements OnInit {
                 console.error('No se encontró ningún producto con el nombre especificado');
               }
             } catch (error) {
-              // Manejar el error en caso de que la eliminación falle
               console.error('Error al eliminar el producto:', error);
             }
           }

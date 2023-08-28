@@ -52,7 +52,7 @@ export class EditarPrecioModalPage implements OnInit {
   }
 
   guardarCambios() {
-    // Realiza la consulta para buscar el documento por el nombre en la colección "productos"
+    // Realiza la consulta para buscar el documento por el nombre en la colección productos
     const productosQuery = this.firestore.collection('productos', ref => ref.where('nombre', '==', this.producto.nombre));
   
     // Ejecuta la consulta y obtén el primer resultado
@@ -61,7 +61,7 @@ export class EditarPrecioModalPage implements OnInit {
         const doc = snapshot.docs[0];
         const docId = doc.id;
   
-        // Actualiza el documento con los nuevos valores en la colección "productos"
+        // actualiza el documento con los nuevos valores en la colección productos
         this.firestore.collection('productos').doc(docId).update({
           nombre: this.nuevoNombre,
           precio: this.nuevoPrecio,
@@ -70,12 +70,12 @@ export class EditarPrecioModalPage implements OnInit {
           categoria: this.nuevaCategoria,
           imagen: this.nuevaImagen,
           cantidad: this.nuevaCantidad
-          // Actualiza más campos según los que deseas editar
+          // actualiza los productos
         }).then(async () => {
-          // Cierra el modal
+          // cierra el modal
           this.modalController.dismiss();
   
-          // Muestra un mensaje de éxito
+          // Muestra un mensaje de exito
           const toast = await this.toastController.create({
             message: 'Cambios guardados exitosamente',
             duration: 2000,
@@ -85,13 +85,13 @@ export class EditarPrecioModalPage implements OnInit {
           toast.present();
         }).catch(error => {
           console.error('Error al guardar cambios en la colección "productos":', error);
-          // Muestra un mensaje de error si la actualización falla
+          // Muestra un mensaje de error si la actualizacion falla
         });
       } else {
         console.error('No se encontró ningún documento con el nombre proporcionado en la colección "productos"');
       }
     });
-    // Realiza la consulta para buscar el documento por el nombre en la colección "ofertas"
+    // Realiza la consulta para buscar el documento por el nombre en la colección ofertas
     const ofertasQuery = this.firestore.collection('ofertas', ref => ref.where('nombre', '==', this.producto.nombre));
   
     // Ejecuta la consulta y obtén el primer resultado
@@ -100,7 +100,7 @@ export class EditarPrecioModalPage implements OnInit {
         const doc = snapshot.docs[0];
         const docId = doc.id;
   
-        // Actualiza el documento con los nuevos valores en la colección "ofertas"
+        // Actualiza el documento con los nuevos valores en la colección ofertas
         this.firestore.collection('ofertas').doc(docId).update({
           nombre: this.nuevoNombre,
           precio: this.nuevoPrecio,
@@ -109,12 +109,12 @@ export class EditarPrecioModalPage implements OnInit {
           categoria: this.nuevaCategoria,
           imagen: this.nuevaImagen,
           cantidad: this.nuevaCantidad
-          // Actualiza más campos según los que deseas editar
+          // Actualiza campos
         }).then(async () => {
           // Cierra el modal
           this.modalController.dismiss();
   
-          // Muestra un mensaje de éxito
+          // Muestra un mensaje de exito
           const toast = await this.toastController.create({
             message: 'Cambios de oferta guardados exitosamente',
             duration: 2000,
@@ -124,7 +124,7 @@ export class EditarPrecioModalPage implements OnInit {
           toast.present();
         }).catch(error => {
           console.error('Error al guardar cambios en la colección "ofertas":', error);
-          // Muestra un mensaje de error si la actualización falla
+          // Muestra un mensaje de error si la actualizacion falla
         });
       } else {
         console.error('No se encontró ningún documento con el nombre proporcionado en la colección "ofertas"');

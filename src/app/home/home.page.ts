@@ -44,14 +44,14 @@ export class HomePage implements OnInit {
   categoriaSeleccionada: string = 'categorias';
   productosCollection!: AngularFirestoreCollection<Producto>;
   productos$!: Observable<Producto[]>;
-  productos!: Producto[]; // Propiedad para almacenar los productos
+  productos!: Producto[]; 
   carrito: Producto[] = [];
-  searchQuery: string = ''; // Declaración de searchQuery aquí
-  cantidadTotalCarrito = 0; // Nueva propiedad para mantener el número total de productos en el carrito
+  searchQuery: string = ''; 
+  cantidadTotalCarrito = 0; 
   userId: string = '';
 
   imagenNoDisponible(event: any) {
-    // Lógica para manejar el caso de imagen no disponible
+  
     event.target.src = 'ruta-de-la-imagen-por-defecto';
   }
   constructor(
@@ -93,7 +93,7 @@ ofertas(){
     this.productosCollection = this.firestore.collection<Producto>('productos');
     this.productos$ = this.productosCollection.valueChanges().pipe(
       map((productos: Producto[]) => {
-        // Después de cargar los productos, inicializa cantidadCarrito con cantidad
+        
       productos.forEach((producto) => (producto.cantidadCarrito = producto.cantidad));
         if (this.searchQuery.trim() !== '') {
           return productos.filter((producto: Producto) => producto.nombre.includes(this.searchQuery));
@@ -105,9 +105,9 @@ ofertas(){
           }
         }
       }),
-      startWith([]), // Inicia el Observable con un arreglo vacío
+      startWith([]), 
       tap((productos: Producto[]) => {
-        // Verificar que los productos se estén filtrando correctamente
+        // Verificar que los productos se esten filtrando correctamente
         console.log(productos);
       })
     );
@@ -124,17 +124,17 @@ ofertas(){
     try {
       const user = await this.afAuth.currentUser;
       if (user) {
-        // Usuario autenticado, verificar su existencia en la colección "usuarios"
+        // Usuario autenticado verificar su existencia en la colección usuarios
         const userId = user.uid;
         const userDocRef = this.firestore.collection('usuarios').doc(userId);
   
-        // Verificar si el documento del usuario existe en la colección "usuarios"
+        // Verificar si el documento del usuario existe en la colección usuarios
         const userSnapshot = await userDocRef.get().toPromise();
         if (userSnapshot && userSnapshot.exists) {
-          // Usuario autenticado y existe en la colección "usuarios"
+          // Usuario autenticado y existe en la colección usuarios
           console.log('Usuario autenticado y existe en la colección "usuarios"');
         } else {
-          // Mostrar el modal para iniciar sesión o registrarse
+          // Mostrar el modal para iniciar sesion o registrarse
           const loginModal = await this.modalController.create({
             component: LoginModalPage,
             cssClass: 'my-custom-modal'
@@ -143,13 +143,13 @@ ofertas(){
           return;
         }
       } else {
-        // Usuario no autenticado, mostrar el modal para iniciar sesión o registrarse
+        // Usuario no autenticado mostrar el modal para iniciar sesion o registrarse
         const loginModal = await this.modalController.create({
           component: LoginModalPage,
           cssClass: 'my-custom-modal'
         });
         loginModal.present();
-        return; // Detener la función si el usuario no está autenticado
+        return; // Detener la función si el usuario no esta autenticado
       }
   
     } catch (error) {
@@ -165,7 +165,7 @@ ofertas(){
       // Agregar el producto al carrito
       this.carritoService.agregarProducto(producto);
 
-      // Actualizar el contador en el botón después de agregar un producto al carrito
+      // Actualizar el contador en el boton después de agregar un producto al carrito
       const contadorButton = document.getElementById(`contador-${producto.nombre}`);
       if (contadorButton) {
         contadorButton.innerHTML = producto.cantidad.toString();
@@ -188,24 +188,24 @@ ofertas(){
     
   }
   
- // Función para obtener el total de productos en el carrito
+ // Funcion para obtener el total de productos en el carrito
  getTotalProductosEnCarrito(): number {
   return this.carritoService.getCarrito().reduce((total, producto) => total + producto.cantidad, 0);
 }
 
-// Función para vaciar el carrito
+// Funcion para vaciar el carrito
 vaciarCarrito() {
   this.carritoService.vaciarCarrito();
 }
 
 buscar() {
-  const searchQueryLower = this.searchQuery.toLowerCase(); // Convertir la cadena de búsqueda a minúsculas
+  const searchQueryLower = this.searchQuery.toLowerCase(); // Convertir la cadena de búsqueda a minusculas
 
   if (searchQueryLower.trim() !== '') {
     this.productos$ = this.productosCollection.valueChanges().pipe(
       map((productos: Producto[]) =>
         productos.filter((producto: Producto) =>
-          producto.nombre.toLowerCase().includes(searchQueryLower) // Convertir el nombre del producto a minúsculas antes de comparar
+          producto.nombre.toLowerCase().includes(searchQueryLower) // Convertir el nombre del producto a minusculas antes de comparar
         )
       ),
       tap(() => (this.categoriaSeleccionada = 'categorias'))

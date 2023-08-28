@@ -2,11 +2,18 @@
   width: 150px;
 
   }
+  .pedido-entregado {
+    color: green;
+  }
   
   .header1{
   background-color: #FE0000;
   }
-  
+  .custom-button {
+    color: white;       
+    background-color: green; 
+  }
+
   .contenedor{
     background-color: antiquewhite;
   }
@@ -42,7 +49,16 @@
     margin-left:-150px;
 
   }
+  .alert-entregado {
+    color: green;
+  }
 
+  .alert-entregado .icon {
+    color: green;
+  }
+  .palomita-verde {
+    color: green;
+  }
 
   .mini-icon{
     color: #FE0000;
@@ -99,7 +115,9 @@
   .Logo {
     width: 60px;
   }
-
+  .alert-success {
+    color: green !important; 
+  }
 
 .header1 {
   background-color: #FF82FA;

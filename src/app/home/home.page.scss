@@ -182,7 +182,7 @@
   
   
   .small-card {
-    width: 200px; /* Ajusta el valor según tus necesidades */
+    width: 200px; 
     height: 250px;
   }
   
@@ -355,7 +355,7 @@
   }
   .small-card {
     
-    width: 100px; /* Ajusta el valor según tus necesidades */
+    width: 100px;
     height: 140px;
 
   }
@@ -379,7 +379,7 @@
   }
 
   .Carrito, .Detalle {
-    margin-top: 10px; /* Ajusta según sea necesario */
+    margin-top: 10px; 
   }
   .contador {
     display: inline-block;
@@ -505,7 +505,6 @@ top:80%
   font-size: 7px;
   font-weight: bold;
   margin-left: 4px;
-  /* Añadir margen superior para separar el icono y el texto */
   margin-top: 2px;
 }
 .small-card {
@@ -545,8 +544,7 @@ top:80%
     .oferta-text {
       font-size: 7px;
       font-weight: bold;
-      margin-left: 4px;
-      /* Añadir margen superior para separar el icono y el texto */
+      margin-left: 4px;  
       margin-top: 2px;
     }
     .small-card {
@@ -691,7 +689,7 @@ top:80%
    }
   .small-card {
     
-    width: 100px; /* Ajusta el valor según tus necesidades */
+    width: 100px; 
     height: 140px;
   }
   
@@ -789,17 +787,17 @@ top:80%
 }
 .prueba {
   ion-card {
-    position: relative; /* Establece el contenedor como relativo */
+    position: relative; 
     
     .oferta-icon {
-      position: absolute; /* Posición absoluta para el ícono de ofertas */
+      position: absolute;
       top: 0;
-      left: 1%; /* Ajusta según tu diseño */
-      right: 0; /* Ajusta según tu diseño */
-      z-index: 1; /* Asegura que el ícono esté por encima de la imagen */
-      background-color: white; /* Agrega un fondo blanco para resaltar el ícono */
-      border-radius: 50%; /* Da una forma redondeada al ícono */
-      padding: 5px; /* Espacio interno dentro del ícono */
+      left: 1%; 
+      right: 0; 
+      z-index: 1;
+      background-color: white; 
+      border-radius: 50%; 
+      padding: 5px; 
       width: 15px;
       height: 15px;
       color: #FE0000;
@@ -812,7 +810,7 @@ top:80%
   }
   .small-card {
     
-    width: 130px; /* Ajusta el valor según tus necesidades */
+    width: 130px; 
     height: 140px;
     left: 6%;
   }
@@ -881,17 +879,17 @@ top:80%
   }
   .prueba {
     ion-card {
-      position: relative; /* Establece el contenedor como relativo */
+      position: relative;
       
       .oferta-icon {
-        position: absolute; /* Posición absoluta para el ícono de ofertas */
+        position: absolute; 
         top: 0;
-        left: 1%; /* Ajusta según tu diseño */
-        right: 0; /* Ajusta según tu diseño */
-        z-index: 1; /* Asegura que el ícono esté por encima de la imagen */
-        background-color: white; /* Agrega un fondo blanco para resaltar el ícono */
-        border-radius: 50%; /* Da una forma redondeada al ícono */
-        padding: 5px; /* Espacio interno dentro del ícono */
+        left: 1%;
+        right: 0; 
+        z-index: 1;
+        background-color: white; 
+        border-radius: 50%;
+        padding: 5px; 
         width: 15px;
         height: 15px;
         color: #FE0000;

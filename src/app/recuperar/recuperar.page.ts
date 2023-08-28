@@ -33,10 +33,9 @@ export class RecuperarPage {
     }
 
     try {
-      // Envío de correo electrónico de restablecimiento de contraseña
+      // Envio de correo electrónico de restablecimiento de contraseña
       await this.afAuth.sendPasswordResetEmail(email);
 
-      // Mostrar mensaje de éxito
       const alert = await this.alertController.create({
         header: 'Éxito',
         message: 'Se ha enviado un enlace de restablecimiento de contraseña a su correo electrónico',
@@ -44,10 +43,8 @@ export class RecuperarPage {
       });
       await alert.present();
 
-      // Redirigir al usuario a la página de inicio de sesión
       this.router.navigate(['login']);
     } catch (error: any) {
-      // Mostrar mensaje de error
       const alert = await this.alertController.create({
         header: 'Error',
         message: error.message,

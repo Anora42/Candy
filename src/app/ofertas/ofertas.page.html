@@ -40,7 +40,7 @@
   <ion-grid class="prueba">
     <ion-row class="prueba">
       <ng-container *ngFor="let producto of productos$ | async">
-        <ng-container *ngIf="producto.categoria === 'Ofertas'"> <!-- Agregamos esta condición -->
+        <ng-container *ngIf="producto.categoria === 'Ofertas'"> 
           <ion-col>
             <ion-card class="small-card">
               <div class="oferta-container" *ngIf="producto.categoria === 'Ofertas'">
